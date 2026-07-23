@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sunshine Cafe & Restaurant - Good Food. Great Vibes.</title>
+    <meta name="description" content="Experience delicious dine-in dining, handcrafted beverages, and a cozy atmosphere at Sunshine Cafe & Restaurant in Pithora."/>
+    
+    <!-- Tailwind CSS with CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#ffdfa0",
+                        "secondary": "#E67E22",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#2c1e16",
+                        "surface-tint": "#E67E22",
+                        "outline": "#c9b19c",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#f5e0c6",
+                        "surface-bright": "#FFF1E0",
+                        "surface": "#FFF1E0",
+                        "on-primary-fixed": "#4a2800",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "on-secondary-fixed": "#4d2300",
+                        "surface-container-highest": "#eaccb0",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#f6be39",
+                        "on-secondary-fixed-variant": "#733600",
+                        "tertiary-fixed": "#66ff8e",
+                        "on-primary-container": "#4a2800",
+                        "primary": "#E67E22",
+                        "background": "#FFF1E0",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#ffdbcb",
+                        "primary-container": "#ffdbcb",
+                        "secondary-container": "#ffdbcb",
+                        "inverse-primary": "#ffb68c",
+                        "on-tertiary-container": "#00481d",
+                        "surface-container": "#fae7d1",
+                        "surface-dim": "#eaccb0",
+                        "tertiary": "#006d2f",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#00c259",
+                        "surface-variant": "#f5e0c6",
+                        "inverse-on-surface": "#faefe1",
+                        "on-secondary-container": "#331600",
+                        "on-tertiary-fixed": "#002109",
+                        "tertiary-fixed-dim": "#3de273",
+                        "on-surface-variant": "#5c4330",
+                        "secondary-fixed-dim": "#ffb68c",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#2c1e16",
+                        "inverse-surface": "#453227",
+                        "outline-variant": "#e0cab5",
+                        "on-primary-fixed-variant": "#733600",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#fff5ea",
+                        "accent": "#D4A017"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        sans: ["Quicksand", "sans-serif"],
+                        body: ["Quicksand", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth Theme Transitions */
+        *, *::before, *::after {
+            transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FFF1E0;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(230, 126, 34, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(212, 160, 23, 0.08) 0px, transparent 50%);
+        }
+
+        .block-border {
+            border: 4px solid #2c1e16;
+            box-shadow: 6px 6px 0px #2c1e16;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+        }
+        
+        .block-border:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 10px 10px 0px #2c1e16;
+        }
+        
+        .block-border:active {
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0px #2c1e16;
+        }
+
+        /* Dark Mode Palette: Warm Espresso Brown (#1a100a), Dark Charcoal (#26180f), Muted Gold (#D4A017) */
+        .dark body {
+            background-color: #1a100a !important;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(230, 126, 34, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(212, 160, 23, 0.12) 0px, transparent 50%) !important;
+            color: #f5e0c6 !important;
+        }
+        .dark .bg-background, .dark .bg-surface {
+            background-color: #1a100a !important;
+        }
+        .dark .bg-surface-container-high {
+            background-color: #26180f !important;
+        }
+        .dark .text-on-background, .dark .text-on-surface-variant {
+            color: #f5e0c6 !important;
+        }
+        .dark .bg-white {
+            background-color: #26180f !important;
+            color: #f5e0c6 !important;
+        }
+        .dark .block-border {
+            border-color: #f5e0c6 !important;
+            box-shadow: 6px 6px 0px #f5e0c6 !important;
+        }
+        .dark .block-border:hover {
+            box-shadow: 10px 10px 0px #f5e0c6 !important;
+        }
+        .dark nav#navbar {
+            background-color: rgba(26, 16, 10, 0.95) !important;
+            border-color: #f5e0c6 !important;
+        }
+
+        /* Glassmorphism Navbar Scrolled State */
+        #navbar {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-nav-scrolled {
+            top: 12px !important;
+            left: 16px !important;
+            right: 16px !important;
+            width: calc(100% - 32px) !important;
+            max-width: 1440px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            border-radius: 22px !important;
+            padding-top: 0.6rem !important;
+            padding-bottom: 0.6rem !important;
+            background-color: rgba(255, 241, 224, 0.78) !important;
+            backdrop-filter: blur(18px) !important;
+            -webkit-backdrop-filter: blur(18px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.4) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(44, 30, 22, 0.08) !important;
+        }
+
+        .dark .glass-nav-scrolled {
+            background-color: rgba(26, 16, 10, 0.82) !important;
+            border: 1px solid rgba(245, 224, 198, 0.22) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+        }
+
+        /* Floating Particle Animations */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-18px) rotate(10deg); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(16px) rotate(-12deg); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+        @keyframes ringPulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+
+        .animate-float-slow { animation: floatSlow 6s ease-in-out infinite; }
+        .animate-float-reverse { animation: floatReverse 7s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulseGlow 4s ease-in-out infinite; }
+        .animate-ring-pulse { animation: ringPulse 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+        /* Continuous Infinite Slider */
+        @keyframes infiniteScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .infinite-slider-track {
+            display: flex;
+            width: max-content;
+            animation: infiniteScroll 35s linear infinite;
+        }
+
+        .infinite-slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* Smooth Reveal Scroll Animations */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal-left.active, .reveal-right.active {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        /* Hide Horizontal Scrollbar for Category Pills */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #FFF1E0; }
+        ::-webkit-scrollbar-thumb { background: #2c1e16; border-radius: 5px; }
+        .dark ::-webkit-scrollbar-track { background: #1a100a; }
+        .dark ::-webkit-scrollbar-thumb { background: #E67E22; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden selection:bg-primary selection:text-on-primary">
+
+    <!-- Loading Screen Experience -->
+    <div id="preloader" class="fixed inset-0 bg-[#FFF1E0] dark:bg-[#1a100a] z-[100] flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="flex flex-col items-center gap-4 text-center px-4">
+            <img alt="Sunshine Cafe Logo" class="w-20 h-20 rounded-2xl border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] animate-bounce" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf6MhLpe1bP7RzYuRMqU7gGKw8UNg4CUXj4y9r2PSC2Yyr3lU61swRTi9CFfyc8k1mF5Uu7VYUyxnHqRd6A9NfPv8WqxibjgWyYAxzIJ8J2OwXkN0UXohZVQb6k20qGIGPrMr0r2eXybdr5X-hveLCy57kAVr0DBvT8PwkEd5_XPvwOmWsMR4zmK09wAPd_dFbvaN_lmbrt4mDyj6rr0lKE6aS4JdH1FtpTw0gNgxCJu7wSrCbic1WpkwZfAtycyAgb5uJyFfI6mt5"/>
+            <h2 class="text-3xl font-black text-on-background tracking-wide">Sunshine Cafe</h2>
+            <p class="text-base font-extrabold text-primary bg-primary/20 px-4 py-1 rounded-xl border-2 border-primary">Good Food. Great Vibes.</p>
+            <div class="w-48 h-3 bg-surface-container-high border-2 border-on-background rounded-full overflow-hidden mt-4">
+                <div class="h-full bg-primary animate-pulse w-full"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Navigation Bar -->
+    <header>
+        <nav class="bg-surface/90 backdrop-blur-md border-b-4 border-on-background fixed top-0 w-full z-50 transition-all duration-300 py-4" id="navbar">
+            <div class="flex justify-between items-center px-4 sm:px-8 lg:px-12 max-w-[1500px] mx-auto">
+                <!-- Brand -->
+                <a class="flex items-center gap-3 text-xl font-extrabold text-on-background hover:scale-105 transition-transform duration-300" href="#home">
+                    <img alt="Sunshine Cafe Logo" class="w-11 h-11 rounded-xl border-2 border-on-background object-cover shadow-[2px_2px_0px_#2c1e16]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf6MhLpe1bP7RzYuRMqU7gGKw8UNg4CUXj4y9r2PSC2Yyr3lU61swRTi9CFfyc8k1mF5Uu7VYUyxnHqRd6A9NfPv8WqxibjgWyYAxzIJ8J2OwXkN0UXohZVQb6k20qGIGPrMr0r2eXybdr5X-hveLCy57kAVr0DBvT8PwkEd5_XPvwOmWsMR4zmK09wAPd_dFbvaN_lmbrt4mDyj6rr0lKE6aS4JdH1FtpTw0gNgxCJu7wSrCbic1WpkwZfAtycyAgb5uJyFfI6mt5"/>
+                    <span class="tracking-wide text-2xl font-black">Sunshine Cafe</span>
+                </a>
+
+                <!-- Desktop Links -->
+                <ul class="hidden md:flex items-center gap-8 font-bold text-sm uppercase tracking-wider">
+                    <li>
+                        <a class="nav-link relative text-on-background hover:text-primary transition-colors pb-1 group active-link" href="#home">
+                            Home
+                            <span class="nav-underline absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-100 transition-transform origin-left"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link relative text-on-background hover:text-primary transition-colors pb-1 group" href="#menu">
+                            Popular Dishes
+                            <span class="nav-underline absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link relative text-on-background hover:text-primary transition-colors pb-1 group" href="#gallery">
+                            Gallery
+                            <span class="nav-underline absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link relative text-on-background hover:text-primary transition-colors pb-1 group" href="#book">
+                            Book Table
+                            <span class="nav-underline absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link relative text-on-background hover:text-primary transition-colors pb-1 group" href="#about">
+                            About Us
+                            <span class="nav-underline absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link relative text-on-background hover:text-primary transition-colors pb-1 group" href="#contact">
+                            Contact
+                            <span class="nav-underline absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-3">
+                    <!-- Light / Dark Mode Toggle Button with Working Listener -->
+                    <button onclick="toggleTheme()" id="themeToggle" aria-label="Toggle Dark/Light Mode" class="p-2.5 border-2 border-on-background rounded-xl text-on-background bg-surface-container-high hover:bg-primary hover:text-white transition-all active:scale-95 duration-200">
+                        <span class="material-symbols-outlined block transition-transform duration-300 hover:rotate-45" id="themeIcon">dark_mode</span>
+                    </button>
+
+                    <!-- Reserve Table Button -->
+                    <button onclick="openBookingModal()" class="hidden sm:flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-xl border-2 border-on-background font-black text-sm uppercase hover:bg-secondary transition-colors block-border">
+                        <span class="material-symbols-outlined text-[20px]">table_restaurant</span>
+                        Reserve Table
+                    </button>
+
+                    <a class="hidden md:flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-xl border-2 border-on-background font-bold text-sm hover:bg-[#20b858] transition-colors block-border" href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!%20I%20would%20like%20to%20know%20more." target="_blank">
+                        <span class="material-symbols-outlined text-[20px]">chat</span>
+                        WhatsApp
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="md:hidden p-2.5 border-2 border-on-background rounded-xl text-on-background hover:bg-primary hover:text-white transition-all">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Drawer Menu -->
+            <div id="mobileMenu" class="hidden md:hidden bg-surface border-t-4 border-on-background p-6 space-y-4 font-bold text-lg">
+                <a class="block py-2 text-on-background border-b-2 border-on-background/10 hover:pl-2 transition-all" href="#home">Home</a>
+                <a class="block py-2 text-on-background border-b-2 border-on-background/10 hover:pl-2 transition-all" href="#menu">Popular Dishes</a>
+                <a class="block py-2 text-on-background border-b-2 border-on-background/10 hover:pl-2 transition-all" href="#gallery">Gallery</a>
+                <a class="block py-2 text-on-background border-b-2 border-on-background/10 hover:pl-2 transition-all" href="#book">Book Table</a>
+                <a class="block py-2 text-on-background border-b-2 border-on-background/10 hover:pl-2 transition-all" href="#about">About Us</a>
+                <a class="block py-2 text-on-background border-b-2 border-on-background/10 hover:pl-2 transition-all" href="#contact">Contact</a>
+                <button onclick="openBookingModal()" class="w-full flex items-center justify-center gap-2 bg-primary text-white py-3 rounded-xl border-2 border-on-background text-base block-border font-black uppercase">
+                    <span class="material-symbols-outlined">table_restaurant</span> Reserve Table
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-[90vh] flex items-center bg-accent/10 border-b-4 border-on-background" id="home">
+            <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+                <div class="absolute top-1/6 left-10 animate-float-slow text-primary/60"><span class="material-symbols-outlined text-4xl">coffee</span></div>
+                <div class="absolute top-1/3 left-1/4 animate-float-reverse text-secondary/70"><span class="material-symbols-outlined text-5xl">eco</span></div>
+                <div class="absolute top-1/2 right-1/3 animate-float-slow text-accent/80"><span class="material-symbols-outlined text-4xl">sparkles</span></div>
+                <div class="absolute bottom-1/4 left-1/3 animate-float-reverse text-tertiary/70"><span class="material-symbols-outlined text-6xl">restaurant</span></div>
+                <div class="absolute top-1/4 right-10 animate-float-slow text-primary/70"><span class="material-symbols-outlined text-5xl">local_cafe</span></div>
+                
+                <div class="absolute top-20 left-1/3 w-36 h-36 bg-primary/20 rounded-full blur-3xl animate-pulse-glow"></div>
+                <div class="absolute bottom-20 right-1/4 w-44 h-44 bg-accent/20 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 2s;"></div>
+            </div>
+
+            <div class="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                    
+                    <div class="lg:col-span-7 flex flex-col items-start gap-6 bg-surface p-8 sm:p-10 rounded-3xl border-4 border-on-background shadow-[10px_10px_0px_#2c1e16]">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent text-on-background border-2 border-on-background font-black shadow-[4px_4px_0px_#2c1e16] hover:scale-105 transition-transform">
+                            <span class="animate-bounce">⭐</span>
+                            <span class="text-xs sm:text-sm uppercase tracking-wider font-extrabold">Pithora's Favourite Dine-in Cafe & Restaurant</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-6xl xl:text-7xl font-extrabold text-on-background leading-tight tracking-tight">
+                            Good Food.<br/>
+                            <span class="text-primary bg-primary/20 px-4 py-1 rounded-2xl transform -skew-x-6 inline-block mt-2 border-3 border-primary shadow-[4px_4px_0px_#2c1e16]">Great Vibes.</span>
+                        </h1>
+
+                        <p class="text-base sm:text-xl text-on-surface-variant font-semibold bg-surface-container-high p-5 rounded-2xl border-2 border-on-background/20 leading-relaxed">
+                            Experience a delightful journey of handcrafted culinary flavors, aromatic coffee blends, and fresh ingredients in our cozy dine-in cafe in Pithora.
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-4 pt-2">
+                            <a class="bg-primary text-white px-8 py-4 rounded-xl font-extrabold uppercase tracking-wider hover:bg-secondary transition-colors block-border flex items-center gap-3 text-base sm:text-lg group" href="#menu">
+                                Popular Dishes 
+                                <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-x-2">arrow_downward</span>
+                            </a>
+                            <button onclick="openBookingModal()" class="bg-surface text-on-background px-8 py-4 rounded-xl font-extrabold uppercase tracking-wider hover:bg-surface-container-highest transition-colors block-border flex items-center gap-2 text-base sm:text-lg">
+                                <span class="material-symbols-outlined">table_restaurant</span> Reserve a Table
+                            </button>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-4 mt-4 w-full">
+                            <div class="bg-accent/20 p-4 rounded-2xl border-2 border-on-background flex-1 text-center min-w-[120px] hover:scale-105 transition-transform shadow-[4px_4px_0px_#2c1e16]">
+                                <p class="text-2xl sm:text-3xl font-black">4.8 ★</p>
+                                <p class="text-xs uppercase font-extrabold text-on-surface-variant">Rating</p>
+                            </div>
+                            <div class="bg-secondary/20 p-4 rounded-2xl border-2 border-on-background flex-1 text-center min-w-[120px] hover:scale-105 transition-transform shadow-[4px_4px_0px_#2c1e16]">
+                                <p class="text-2xl sm:text-3xl font-black">500+</p>
+                                <p class="text-xs uppercase font-extrabold text-on-surface-variant">Happy Guests</p>
+                            </div>
+                            <div class="bg-tertiary/20 p-4 rounded-2xl border-2 border-on-background flex-1 text-center min-w-[130px] hover:scale-105 transition-transform shadow-[4px_4px_0px_#2c1e16]">
+                                <p class="text-2xl sm:text-3xl font-black">100%</p>
+                                <p class="text-xs uppercase font-extrabold text-on-surface-variant">Cozy Dine-In</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 relative" id="heroImageWrapper">
+                        <div class="relative rounded-[2.5rem] overflow-hidden border-4 border-on-background shadow-[18px_18px_0px_#2c1e16] aspect-[4/5] bg-secondary rotate-2 hover:rotate-0 transition-all duration-500 group">
+                            <img alt="Sunshine Cafe Special Food" class="w-full h-full object-cover mix-blend-overlay opacity-90 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk_zxz1FLBRXeGr7a0_T3giLF2mcVrbIfQyD8KSwhEqjL7AG8WHm_ms583h3P3w1IXOMMqCYF4H_mATJuGdmTehpE0poaPgYt6qJIgpI25kXcvpR_HbFQ4mXsT4Oki4657uGImTB_pBRGqBh5b-VVHh7tGShVY6AIEpbbs2bfLzk914XBHqRnct2TIpGtJCJyWPjHViNvFJtUZNQky3jjWxUqsIDV8WNsI1aEYJzKKgB2GbeEuhRfhAtAUCz1xIUpXNyiVzRauI5Gk"/>
+                        </div>
+
+                        <div class="absolute top-8 -left-6 bg-accent p-4 rounded-2xl border-4 border-on-background flex items-center gap-3 animate-float-slow shadow-[8px_8px_0px_#2c1e16] -rotate-6">
+                            <div class="w-11 h-11 bg-on-background rounded-xl flex items-center justify-center text-accent relative">
+                                <span class="material-symbols-outlined font-bold">schedule</span>
+                                <span class="absolute top-1 right-1 w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-black uppercase tracking-wider flex items-center gap-1">
+                                    <span class="w-2 h-2 rounded-full bg-green-600 inline-block"></span> Open Today
+                                </p>
+                                <p class="text-sm font-extrabold bg-white/60 px-2.5 py-0.5 rounded-lg mt-0.5">10:00 AM - 11:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute bottom-8 -right-6 bg-white p-4 rounded-2xl border-4 border-on-background flex items-center gap-3 animate-float-reverse shadow-[8px_8px_0px_#2c1e16] rotate-3">
+                            <div class="w-11 h-11 bg-primary text-white rounded-xl flex items-center justify-center text-xl font-black shadow-md">
+                                👍
+                            </div>
+                            <div>
+                                <p class="text-xs font-black uppercase tracking-wider">Top Rated Dine-In</p>
+                                <p class="text-sm font-extrabold text-on-surface-variant">In Pithora</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Homepage Streamlined Featured Menu Section (6 Dishes) -->
+        <section class="py-16 bg-surface-container-high border-b-4 border-on-background" id="menu">
+            <div class="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-6 bg-white p-8 rounded-3xl border-4 border-on-background shadow-[10px_10px_0px_#2c1e16]">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-on-background mb-2">Our Popular Dishes</h2>
+                        <p class="text-base sm:text-lg text-on-surface-variant font-bold bg-accent/20 inline-block px-4 py-1.5 rounded-xl border-2 border-on-background/20">A curated selection of our guest-favourite specialties.</p>
+                    </div>
+                </div>
+
+                <!-- Homepage Category Filter Pills (All, Veg, Non-Veg, Pizza, Chinese, Shakes) -->
+                <div class="no-scrollbar overflow-x-auto flex items-center gap-2.5 pb-4 mb-8 border-b-2 border-on-background/10" id="categoryFilterContainer">
+                    <!-- Homepage Filter Pills Rendered Here -->
+                </div>
+
+                <!-- Featured 6 Dishes Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="menuContainer">
+                    <!-- Featured 6 Dish Cards Rendered Here -->
+                </div>
+
+                <!-- Prominent View Full Digital Menu Button -->
+                <div class="text-center">
+                    <button onclick="openFullMenuModal()" class="w-full sm:w-auto bg-primary text-white px-10 py-5 rounded-2xl border-4 border-on-background font-black text-lg sm:text-xl uppercase shadow-[8px_8px_0px_#2c1e16] hover:bg-secondary transition-all flex items-center justify-center gap-3 block-border mx-auto font-bold tracking-wider">
+                        <span class="material-symbols-outlined text-3xl">menu_book</span> View Full Digital Menu (19 Categories)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-24 bg-surface border-b-4 border-on-background" id="about">
+            <div class="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16 bg-white p-8 rounded-3xl border-4 border-on-background shadow-[10px_10px_0px_#2c1e16] transform -rotate-1">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-on-background mb-3">Why Choose Sunshine Cafe</h2>
+                    <p class="text-base sm:text-lg text-on-surface-variant font-bold">Uncompromising quality, genuine local hospitality, and mouthwatering dine-in tastes.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                    <div class="bg-accent p-6 rounded-2xl text-center border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 hover:shadow-[10px_10px_0px_#2c1e16] transition-all">
+                        <div class="w-14 h-14 mx-auto bg-white border-4 border-on-background rounded-2xl flex items-center justify-center mb-3 text-on-background shadow-md">
+                            <span class="material-symbols-outlined text-3xl font-bold">eco</span>
+                        </div>
+                        <h3 class="text-lg font-black">Fresh Ingredients</h3>
+                    </div>
+
+                    <div class="bg-primary text-white p-6 rounded-2xl text-center border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 hover:shadow-[10px_10px_0px_#2c1e16] transition-all">
+                        <div class="w-14 h-14 mx-auto bg-white text-primary border-4 border-on-background rounded-2xl flex items-center justify-center mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-3xl font-bold">cleaning_services</span>
+                        </div>
+                        <h3 class="text-lg font-black text-white">Hygienic Kitchen</h3>
+                    </div>
+
+                    <div class="bg-surface-container-high p-6 rounded-2xl text-center border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 hover:shadow-[10px_10px_0px_#2c1e16] transition-all">
+                        <div class="w-14 h-14 mx-auto bg-secondary text-white border-4 border-on-background rounded-2xl flex items-center justify-center mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-3xl font-bold">family_restroom</span>
+                        </div>
+                        <h3 class="text-lg font-black">Family Friendly</h3>
+                    </div>
+
+                    <div class="bg-surface-container-high p-6 rounded-2xl text-center border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 hover:shadow-[10px_10px_0px_#2c1e16] transition-all">
+                        <div class="w-14 h-14 mx-auto bg-accent text-on-background border-4 border-on-background rounded-2xl flex items-center justify-center mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-3xl font-bold">cake</span>
+                        </div>
+                        <h3 class="text-lg font-black">Party Hosting</h3>
+                    </div>
+
+                    <div class="bg-accent p-6 rounded-2xl text-center border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 hover:shadow-[10px_10px_0px_#2c1e16] transition-all">
+                        <div class="w-14 h-14 mx-auto bg-white text-on-background border-4 border-on-background rounded-2xl flex items-center justify-center mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-3xl font-bold">bolt</span>
+                        </div>
+                        <h3 class="text-lg font-black">Fast Service</h3>
+                    </div>
+
+                    <div class="bg-primary text-white p-6 rounded-2xl text-center border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 hover:shadow-[10px_10px_0px_#2c1e16] transition-all">
+                        <div class="w-14 h-14 mx-auto bg-white text-primary border-4 border-on-background rounded-2xl flex items-center justify-center mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-3xl font-bold">payments</span>
+                        </div>
+                        <h3 class="text-lg font-black text-white">Affordable Prices</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-24 bg-surface-container-high border-b-4 border-on-background" id="gallery">
+            <div class="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12">
+                <div class="text-center max-w-3xl mx-auto mb-16 bg-white p-8 rounded-3xl border-4 border-on-background shadow-[10px_10px_0px_#2c1e16] transform rotate-1">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-on-background mb-2">Our Moments</h2>
+                    <p class="text-base sm:text-lg text-on-surface-variant font-bold bg-secondary/20 inline-block px-4 py-1.5 rounded-xl border-2 border-on-background/20">Click any image to view in fullscreen gallery.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div onclick="openLightbox(0)" class="cursor-pointer rounded-3xl overflow-hidden group border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] bg-accent hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-80 overflow-hidden relative">
+                            <img alt="Restaurant Interior" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJX96KNYOhVzG48a4kJn9lySgLQ2Cfzro0j2ejmbRDIipb_fbmDTMrtcrlUTpWT-wFY50_TIJH5N63perQ55OcbOtLtha5RjWVefLXkKNMcdeI-c49ukNaRp5fYtrIaS39LvBWoS2gn0M6soqHbITC1ONeUjJnXLSlcJ7A-hvA6DdYrAQ_HQ92PooTTrAW_7LrQRyDCFDupyxS_xrf2o4KfmRS_fNvJc99DBRifyqfeVZTbJd3VxnR-sZ0LQ945Qw5YT3qfG-AUCCl"/>
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-5xl bg-primary p-3 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="openLightbox(1)" class="cursor-pointer rounded-3xl overflow-hidden group border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] bg-primary hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-80 overflow-hidden relative">
+                            <img alt="Delicious Food Spread" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFe6g7JAj05RCByz8i5EtHIrSBkj23bwvVPTCJcdJyjUmQneITzzOky5g4-1D-9eMUz2s3wEAlUo6gKY6S2LbZIXz2zgiD8yVHfRCuFwpIFw5KAjEjWjTq6WwH1EhFYSIE7F3vL6blgyI1zLRr12QWv07_QhRQolOTbgRBXp3F6HEN7We0eDW6zG2GPJ83-_vNA0TVhCr2cIyo6N2FrOtQRLJZTpOwZfXiUwW3s4SrH7VH3cuxISX8xMMcENgISByWP9fhO54q1qBK"/>
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-5xl bg-primary p-3 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="openLightbox(2)" class="cursor-pointer rounded-3xl overflow-hidden group border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] bg-white hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-80 overflow-hidden relative">
+                            <img alt="Warm Dining Ambiance" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrmFfwGPxAp9jnbB09yivi8hvxFf6ZSd6YC2Dx8WOtvM5P_8_dR7b-ATBUynpkwsj_whZF_CI1XffeptIJl0ls0Sss3NrpXTbPLLECGVTnpDVgh7ZKMQoNYbzvblpKzOESXWNM8rUCbaVh162TsKfHh-5g1-XUODaGKtGcBT51equQLXwCybg2guJNrLdHZ9vwpXuJX1fcP6QZKvV7WlB4c04s8G-0PLx9fSPD_v8bvIwyv1zPVkKYxNqsP50cy_pkgQ-hl1z334z-"/>
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-5xl bg-primary p-3 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="openLightbox(3)" class="cursor-pointer rounded-3xl overflow-hidden group border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] bg-secondary hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-80 overflow-hidden relative">
+                            <img alt="Chef Preparing Signature Dishes" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVTseIN4F3ufHXZ8DmuoM8H_uB3vX9y-hRZazezYarzDIIP9rp3K3Arp83W89XxMmGjzzfAZEHO5y7P3Gn27q1snv34DL3jjSzTUqYkTbdGvUCND4j6X4TF_IcfBKICGz7QJLTp9NT_rBWQLddnLRb8VTPm49BqFTinroVHMHz3LhYRxXejExeX6tem05oi5mzbnJIxcI2oMJKNm7ZZcDhAE4dDGvJXzVAVN6m2B-GN7W5CZDoKJTr5I9Y3gb8v0wpEsF7HHAKHovD"/>
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-5xl bg-primary p-3 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="openLightbox(4)" class="cursor-pointer rounded-3xl overflow-hidden group border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] bg-white hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-80 overflow-hidden relative">
+                            <img alt="Special Event Setup" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY2hyUuQR33tzpHnIcC42LTKmi_6OqtW6C0VvvR3pgvL6duFEAMr_dzU6RPdBWjUEXkAXY13ByeClYzC99pKV43y8a-x00GcHbRV03pWsvqfg0rdrquGk243qJBQGIhDyUFLLmikTbFUapjE_DMVkdAzBJRlhYwtMR2ZxiM2ubRI61WL8HeFSs_KLpCysMYK2xMZdIew2ZPmHDTcy1114XMSSnqjKrQeGcKzsKeoesZ1aj8bYK2RTo0-n9MlIksaGp6zrvgOx7C82i"/>
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-5xl bg-primary p-3 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div onclick="openLightbox(5)" class="cursor-pointer rounded-3xl overflow-hidden group border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] bg-tertiary hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-80 overflow-hidden relative">
+                            <img alt="Special Gourmet Platter" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk_zxz1FLBRXeGr7a0_T3giLF2mcVrbIfQyD8KSwhEqjL7AG8WHm_ms583h3P3w1IXOMMqCYF4H_mATJuGdmTehpE0poaPgYt6qJIgpI25kXcvpR_HbFQ4mXsT4Oki4657uGImTB_pBRGqBh5b-VVHh7tGShVY6AIEpbbs2bfLzk914XBHqRnct2TIpGtJCJyWPjHViNvFJtUZNQky3jjWxUqsIDV8WNsI1aEYJzKKgB2GbeEuhRfhAtAUCz1xIUpXNyiVzRauI5Gk"/>
+                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="material-symbols-outlined text-white text-5xl bg-primary p-3 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Continuous Infinite Review Slider Section -->
+        <section class="py-24 bg-surface border-b-4 border-on-background overflow-hidden">
+            <div class="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 mb-14">
+                <div class="text-center max-w-3xl mx-auto bg-white p-8 rounded-3xl border-4 border-on-background shadow-[10px_10px_0px_#2c1e16]">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-on-background mb-3">Guest Reviews</h2>
+                    <div class="flex items-center justify-center gap-1 mb-2 text-primary">
+                        <span class="material-symbols-outlined text-3xl font-black">star</span>
+                        <span class="material-symbols-outlined text-3xl font-black">star</span>
+                        <span class="material-symbols-outlined text-3xl font-black">star</span>
+                        <span class="material-symbols-outlined text-3xl font-black">star</span>
+                        <span class="material-symbols-outlined text-3xl font-black">star_half</span>
+                    </div>
+                    <p class="text-sm sm:text-base font-extrabold text-on-surface-variant bg-accent/20 inline-block px-5 py-1.5 rounded-full border-2 border-on-background/20">4.9/5 based on 250+ Verified Google Reviews</p>
+                </div>
+            </div>
+
+            <div class="overflow-hidden py-4 w-full">
+                <div class="infinite-slider-track">
+                    <div class="w-[380px] sm:w-[420px] px-4 shrink-0">
+                        <div class="bg-white p-8 rounded-3xl border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-4">
+                                <span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span>
+                            </div>
+                            <p class="text-base sm:text-lg font-bold text-on-background italic mb-6 leading-relaxed">"Best place in Pithora for family dinners. The Paneer Butter Masala and Cold Coffee are extraordinary!"</p>
+                            <div class="flex items-center gap-4 bg-surface-container-high p-4 rounded-2xl border-2 border-on-background/20">
+                                <div class="w-12 h-12 rounded-xl border-2 border-on-background bg-accent flex items-center justify-center text-xl font-black shadow-[2px_2px_0px_#2c1e16]">PS</div>
+                                <div>
+                                    <span class="font-black text-base block">Priya Sharma</span>
+                                    <span class="text-xs text-on-surface-variant font-bold">Pithora</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-[380px] sm:w-[420px] px-4 shrink-0">
+                        <div class="bg-white p-8 rounded-3xl border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-4">
+                                <span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span>
+                            </div>
+                            <p class="text-base sm:text-lg font-bold text-on-background italic mb-6 leading-relaxed">"Great ambiance and fast service. We celebrated my son's birthday here, perfect arrangement!"</p>
+                            <div class="flex items-center gap-4 bg-surface-container-high p-4 rounded-2xl border-2 border-on-background/20">
+                                <div class="w-12 h-12 rounded-xl border-2 border-on-background bg-primary text-white flex items-center justify-center text-xl font-black shadow-[2px_2px_0px_#2c1e16]">RV</div>
+                                <div>
+                                    <span class="font-black text-base block">Rahul Verma</span>
+                                    <span class="text-xs text-on-surface-variant font-bold">Mahasamund</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-[380px] sm:w-[420px] px-4 shrink-0">
+                        <div class="bg-white p-8 rounded-3xl border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-4">
+                                <span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span>
+                            </div>
+                            <p class="text-base sm:text-lg font-bold text-on-background italic mb-6 leading-relaxed">"The Hyderabadi Chicken Biryani is a must-try! Authentic taste, rich aromas, and generous portion size."</p>
+                            <div class="flex items-center gap-4 bg-surface-container-high p-4 rounded-2xl border-2 border-on-background/20">
+                                <div class="w-12 h-12 rounded-xl border-2 border-on-background bg-secondary text-white flex items-center justify-center text-xl font-black shadow-[2px_2px_0px_#2c1e16]">AS</div>
+                                <div>
+                                    <span class="font-black text-base block">Anjali Singh</span>
+                                    <span class="text-xs text-on-surface-variant font-bold">Basna</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-[380px] sm:w-[420px] px-4 shrink-0">
+                        <div class="bg-white p-8 rounded-3xl border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-4">
+                                <span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span>
+                            </div>
+                            <p class="text-base sm:text-lg font-bold text-on-background italic mb-6 leading-relaxed">"Superb steamed chicken momos and spicy sauce. The staff treats everyone like family!"</p>
+                            <div class="flex items-center gap-4 bg-surface-container-high p-4 rounded-2xl border-2 border-on-background/20">
+                                <div class="w-12 h-12 rounded-xl border-2 border-on-background bg-tertiary text-white flex items-center justify-center text-xl font-black shadow-[2px_2px_0px_#2c1e16]">MK</div>
+                                <div>
+                                    <span class="font-black text-base block">Manish Kumar</span>
+                                    <span class="text-xs text-on-surface-variant font-bold">Pithora</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplication for Loop -->
+                    <div class="w-[380px] sm:w-[420px] px-4 shrink-0">
+                        <div class="bg-white p-8 rounded-3xl border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-4">
+                                <span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span><span class="material-symbols-outlined text-2xl font-black">star</span>
+                            </div>
+                            <p class="text-base sm:text-lg font-bold text-on-background italic mb-6 leading-relaxed">"Best place in Pithora for family dinners. The Paneer Butter Masala and Cold Coffee are extraordinary!"</p>
+                            <div class="flex items-center gap-4 bg-surface-container-high p-4 rounded-2xl border-2 border-on-background/20">
+                                <div class="w-12 h-12 rounded-xl border-2 border-on-background bg-accent flex items-center justify-center text-xl font-black shadow-[2px_2px_0px_#2c1e16]">PS</div>
+                                <div>
+                                    <span class="font-black text-base block">Priya Sharma</span>
+                                    <span class="text-xs text-on-surface-variant font-bold">Pithora</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Booking CTA Section -->
+        <section class="py-24 relative overflow-hidden border-b-4 border-on-background bg-secondary" id="book">
+            <div class="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+                <div class="max-w-4xl mx-auto text-center bg-white p-8 sm:p-14 rounded-3xl border-4 border-on-background shadow-[14px_14px_0px_#2c1e16]">
+                    <div class="inline-block bg-accent text-on-background px-5 py-2 rounded-xl font-black uppercase border-2 border-on-background mb-6 shadow-[4px_4px_0px_#2c1e16]">Party Time!</div>
+                    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black mb-6 text-on-background">Celebrate With Us</h2>
+                    <p class="text-base sm:text-xl text-on-surface-variant mb-10 font-bold leading-relaxed max-w-2xl mx-auto">Make your special occasions unforgettable. We host Birthdays, Anniversaries, Kitty Parties, and Family Gatherings with customized menus!</p>
+                    <button onclick="openBookingModal()" class="bg-primary text-white px-10 py-5 rounded-2xl text-lg sm:text-xl font-black border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] hover:bg-secondary transition-all uppercase tracking-wider block-border">
+                        Reserve Your Event Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-24 bg-surface" id="contact">
+            <div class="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 bg-white p-8 sm:p-12 rounded-3xl border-4 border-on-background shadow-[16px_16px_0px_#2c1e16]">
+                    
+                    <div class="lg:col-span-6 flex flex-col justify-between">
+                        <div>
+                            <h2 class="text-3xl sm:text-5xl font-black text-on-background mb-4">Get in Touch</h2>
+                            <p class="text-base sm:text-lg text-on-surface-variant mb-8 font-bold bg-accent/20 inline-block px-4 py-2 rounded-xl border-2 border-on-background/20">We'd love to welcome you. Visit us or drop a message!</p>
+                            
+                            <div class="space-y-5 mb-8">
+                                <div class="flex items-start gap-4 bg-surface-container-high p-4 sm:p-5 rounded-2xl border-2 border-on-background/20 hover:border-on-background transition-colors">
+                                    <div class="w-13 h-13 rounded-2xl border-2 border-on-background bg-accent flex items-center justify-center text-on-background shrink-0 shadow-[4px_4px_0px_#2c1e16]">
+                                        <span class="material-symbols-outlined text-2xl font-bold">location_on</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-sm uppercase mb-1">Location</h4>
+                                        <p class="text-base font-bold">Lahrod Chowk, Near Hanuman Mandir, Pithora, Chhattisgarh</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 bg-surface-container-high p-4 sm:p-5 rounded-2xl border-2 border-on-background/20 hover:border-on-background transition-colors">
+                                    <div class="w-13 h-13 rounded-2xl border-2 border-on-background bg-primary text-white flex items-center justify-center shrink-0 shadow-[4px_4px_0px_#2c1e16]">
+                                        <span class="material-symbols-outlined text-2xl font-bold">call</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-sm uppercase mb-1">Phone</h4>
+                                        <p class="text-lg font-black">+91 93010 59399</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 bg-surface-container-high p-4 sm:p-5 rounded-2xl border-2 border-on-background/20 hover:border-on-background transition-colors">
+                                    <div class="w-13 h-13 rounded-2xl border-2 border-on-background bg-secondary text-white flex items-center justify-center shrink-0 shadow-[4px_4px_0px_#2c1e16]">
+                                        <span class="material-symbols-outlined text-2xl font-bold">schedule</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-sm uppercase mb-1">Hours</h4>
+                                        <p class="text-base font-bold">Everyday: 10:00 AM - 11:00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <a class="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-2xl border-4 border-on-background font-black text-lg hover:bg-[#20b858] transition-all shadow-[6px_6px_0px_#2c1e16] uppercase block-border" href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!" target="_blank">
+                                <span class="material-symbols-outlined text-2xl">chat</span> Message on WhatsApp
+                            </a>
+                            
+                            <a href="https://maps.app.goo.gl/RgbfqhCae4hwo4SE7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-2xl border-4 border-on-background font-black text-lg hover:bg-secondary transition-all shadow-[6px_6px_0px_#2c1e16] uppercase block-border">
+                                <span class="material-symbols-outlined text-2xl">directions</span> Get Directions
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 rounded-3xl border-4 border-on-background overflow-hidden shadow-[10px_10px_0px_#2c1e16] h-[400px] lg:h-auto bg-surface-container-high relative group">
+                        <a href="https://maps.app.goo.gl/RgbfqhCae4hwo4SE7" target="_blank" rel="noopener noreferrer" class="absolute top-4 right-4 z-10 bg-white/95 dark:bg-[#1a100a] text-on-background dark:text-white px-4 py-2 rounded-xl border-2 border-on-background font-black text-xs shadow-[4px_4px_0px_#2c1e16] hover:bg-accent hover:text-on-background transition-colors flex items-center gap-2">
+                            <span class="material-symbols-outlined text-base">open_in_new</span> Open in Maps
+                        </a>
+                        <iframe title="Sunshine Cafe & Restaurant Exact Location Map" class="w-full h-full border-0" src="https://maps.google.com/maps?q=Sunshine+Cafe+%26+Restaurant,+Lahrod+Chowk,+Near+Hanuman+Mandir,+Pithora,+Chhattisgarh+493551&t=&z=18&ie=UTF8&iwloc=B&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-on-background w-full border-t-8 border-accent text-white">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-4 sm:px-8 lg:px-12 py-16 max-w-[1500px] mx-auto">
+            <div class="flex flex-col gap-4">
+                <a class="text-2xl font-black text-accent flex items-center gap-3 bg-white/10 p-3 rounded-2xl border-2 border-white/20 w-fit hover:scale-105 transition-transform" href="#home">
+                    <img alt="Sunshine Cafe Logo" loading="lazy" class="w-10 h-10 rounded-lg border-2 border-accent object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf6MhLpe1bP7RzYuRMqU7gGKw8UNg4CUXj4y9r2PSC2Yyr3lU61swRTi9CFfyc8k1mF5Uu7VYUyxnHqRd6A9NfPv8WqxibjgWyYAxzIJ8J2OwXkN0UXohZVQb6k20qGIGPrMr0r2eXybdr5X-hveLCy57kAVr0DBvT8PwkEd5_XPvwOmWsMR4zmK09wAPd_dFbvaN_lmbrt4mDyj6rr0lKE6aS4JdH1FtpTw0gNgxCJu7wSrCbic1WpkwZfAtycyAgb5uJyFfI6mt5"/>
+                    Sunshine Cafe
+                </a>
+                <p class="text-sm font-semibold text-surface-container-high leading-relaxed">
+                    Good Food. Great Vibes.<br/>Experience the best dine-in culinary journey in Pithora.
+                </p>
+                
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="https://wa.me/919301059399" target="_blank" aria-label="WhatsApp" class="w-10 h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center font-bold border-2 border-white/20 hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-xl">chat</span>
+                    </a>
+                    <a href="https://maps.app.goo.gl/RgbfqhCae4hwo4SE7" target="_blank" aria-label="Google Maps" class="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold border-2 border-white/20 hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-xl">location_on</span>
+                    </a>
+                    <a href="mailto:sunshinecafe.pithora@gmail.com" aria-label="Email Us" class="w-10 h-10 rounded-xl bg-accent text-on-background flex items-center justify-center font-bold border-2 border-white/20 hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-xl">mail</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <h4 class="text-base font-black uppercase border-b-2 border-primary pb-1 w-fit">Quick Links</h4>
+                <a class="text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#home">Home</a>
+                <a class="text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#menu">Popular Dishes</a>
+                <a class="text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#gallery">Gallery</a>
+                <a class="text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#book">Book Table</a>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <h4 class="text-base font-black uppercase border-b-2 border-secondary pb-1 w-fit">Dine-in Experience</h4>
+                <span class="text-sm font-bold">Family Dining Experience</span>
+                <span class="text-sm font-bold">Handcrafted Menu Specialties</span>
+                <span class="text-sm font-bold">Birthday & Event Party Hosting</span>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <h4 class="text-base font-black uppercase border-b-2 border-accent pb-1 w-fit">Contact Us</h4>
+                <p class="text-sm font-bold">Lahrod Chowk, Near Hanuman Mandir, Pithora</p>
+                <p class="text-sm font-black text-accent">📞 +91 93010 59399</p>
+                <p class="text-sm font-semibold text-gray-300">✉️ sunshinecafe.pithora@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="border-t-2 border-white/10 py-6 text-center text-xs font-extrabold bg-black/20">
+            © 2026 Sunshine Cafe & Restaurant. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Action Button -->
+    <div class="fixed bottom-6 right-6 z-40 flex items-center gap-3">
+        <div class="hidden sm:flex bg-on-background text-white text-xs font-black px-3 py-1.5 rounded-xl border-2 border-accent shadow-lg animate-pulse">
+            Need info? Chat with us!
+        </div>
+        <a href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!" target="_blank" aria-label="Chat on WhatsApp" class="relative w-14 h-14 bg-[#25D366] text-white rounded-full border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] flex items-center justify-center hover:scale-110 transition-transform">
+            <span class="absolute inset-0 rounded-full bg-[#25D366] animate-ring-pulse pointer-events-none"></span>
+            <span class="material-symbols-outlined text-3xl font-black">chat</span>
+        </a>
+    </div>
+
+    <!-- Mobile Sticky Bottom Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t-4 border-on-background p-3 z-40 flex gap-3 shadow-2xl">
+        <a href="https://maps.app.goo.gl/RgbfqhCae4hwo4SE7" target="_blank" class="flex-1 bg-secondary text-white py-2.5 rounded-xl border-2 border-on-background font-black text-xs uppercase flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-lg">directions</span> Get Directions
+        </a>
+        <button onclick="openBookingModal()" class="flex-1 bg-primary text-white py-2.5 rounded-xl border-2 border-on-background font-black text-xs uppercase flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-lg">table_restaurant</span> Reserve Table
+        </button>
+    </div>
+
+    <!-- Dish Detail Popup Modal -->
+    <div id="dishDetailModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white text-on-background w-full max-w-xl rounded-3xl border-4 border-on-background p-6 sm:p-8 shadow-[16px_16px_0px_#2c1e16] max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeDishDetailModal()" class="absolute top-4 right-4 bg-white/90 border-2 border-on-background p-2 rounded-xl hover:bg-red-500 hover:text-white transition-colors z-10">
+                <span class="material-symbols-outlined block">close</span>
+            </button>
+            <div id="dishDetailContent" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <!-- Dedicated Full Menu Book Modal -->
+    <div id="fullMenuModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white text-on-background w-full max-w-4xl rounded-3xl border-4 border-on-background p-6 sm:p-10 shadow-[20px_20px_0px_#2c1e16] max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center pb-4 border-b-4 border-on-background">
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-black flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-3xl">menu_book</span> Complete Restaurant Menu Book
+                    </h3>
+                    <p class="text-xs sm:text-sm font-bold text-on-surface-variant">Sunshine Cafe & Restaurant • Pithora</p>
+                </div>
+                <button onclick="closeFullMenuModal()" class="p-2 border-2 border-on-background rounded-xl hover:bg-red-500 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined block">close</span>
+                </button>
+            </div>
+
+            <div id="fullMenuBookContainer" class="py-6 overflow-y-auto flex-1 space-y-8 pr-2">
+                <!-- Grouped Categories Rendered Here -->
+            </div>
+
+            <div class="pt-4 border-t-4 border-on-background flex justify-between items-center">
+                <button onclick="openBookingModal(); closeFullMenuModal();" class="bg-primary text-white px-6 py-3 rounded-xl border-2 border-on-background font-black text-sm uppercase hover:bg-secondary transition-colors block-border">
+                    <span class="material-symbols-outlined text-lg">table_restaurant</span> Reserve a Table
+                </button>
+                <button onclick="closeFullMenuModal()" class="bg-surface text-on-background px-6 py-3 rounded-xl border-2 border-on-background font-black text-sm uppercase hover:bg-surface-container-high">
+                    Close Menu
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table & Event Reservation Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white text-on-background w-full max-w-lg rounded-3xl border-4 border-on-background p-6 sm:p-8 shadow-[14px_14px_0px_#2c1e16]">
+            <div class="flex justify-between items-center pb-4 border-b-4 border-on-background mb-4">
+                <h3 class="text-2xl font-black flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-3xl">table_restaurant</span> Event & Table Reservation
+                </h3>
+                <button onclick="closeBookingModal()" aria-label="Close Booking Modal" class="p-1 border-2 border-on-background rounded-xl hover:bg-red-500 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+
+            <form id="bookingForm" onsubmit="submitBooking(event)" class="space-y-4 font-extrabold text-sm">
+                <div>
+                    <label class="block mb-1 text-on-background">Your Name</label>
+                    <input type="text" id="bookingName" required placeholder="Enter full name" class="w-full px-4 py-3 rounded-xl border-2 border-on-background focus:ring-2 focus:ring-primary focus:border-primary font-bold"/>
+                </div>
+
+                <div>
+                    <label class="block mb-1 text-on-background">Phone Number</label>
+                    <input type="tel" id="bookingPhone" required placeholder="Enter phone number" class="w-full px-4 py-3 rounded-xl border-2 border-on-background focus:ring-2 focus:ring-primary focus:border-primary font-bold"/>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block mb-1 text-on-background">Date</label>
+                        <input type="date" id="bookingDate" required class="w-full px-4 py-3 rounded-xl border-2 border-on-background focus:ring-2 focus:ring-primary focus:border-primary font-bold"/>
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-on-background">Time</label>
+                        <input type="time" id="bookingTime" required class="w-full px-4 py-3 rounded-xl border-2 border-on-background focus:ring-2 focus:ring-primary focus:border-primary font-bold"/>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block mb-1 text-on-background">Number of Guests</label>
+                        <select id="bookingGuests" required class="w-full px-4 py-3 rounded-xl border-2 border-on-background focus:ring-2 focus:ring-primary focus:border-primary font-bold">
+                            <option value="2 Persons">2 Persons</option>
+                            <option value="4 Persons">4 Persons</option>
+                            <option value="6 Persons">6 Persons</option>
+                            <option value="8-10 Group">8-10 Group</option>
+                            <option value="15+ Event">15+ Event</option>
+                            <option value="25+ Large Party">25+ Large Party</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-on-background">Occasion</label>
+                        <select id="bookingOccasion" required class="w-full px-4 py-3 rounded-xl border-2 border-on-background focus:ring-2 focus:ring-primary focus:border-primary font-bold">
+                            <option value="Birthday">Birthday</option>
+                            <option value="Anniversary">Anniversary</option>
+                            <option value="Family Gathering">Family Gathering</option>
+                            <option value="Kitty Party">Kitty Party</option>
+                            <option value="Corporate Meeting">Corporate Meeting</option>
+                            <option value="Casual Dining">Casual Dining</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block mb-1 text-on-background">Additional Notes (Optional)</label>
+                    <textarea id="bookingNotes" rows="2" placeholder="Special food preferences or seating requirements..." class="w-full px-4 py-2.5 rounded-xl border-2 border-on-background focus:ring-2 focus:ring-primary focus:border-primary font-bold"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-[#25D366] text-white py-4 rounded-2xl border-4 border-on-background font-black text-lg uppercase shadow-[4px_4px_0px_#2c1e16] hover:bg-[#1eb052] transition-all flex items-center justify-center gap-2 block-border mt-2">
+                    <span class="material-symbols-outlined text-2xl">chat</span> Confirm Reservation on WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox Modal -->
+    <div id="lightboxModal" class="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+        <button onclick="closeLightbox()" aria-label="Close Lightbox" class="absolute top-6 right-6 text-white bg-white/20 hover:bg-white/40 p-3 rounded-full border-2 border-white transition-colors">
+            <span class="material-symbols-outlined text-3xl font-black">close</span>
+        </button>
+
+        <button onclick="changeLightboxImage(-1)" aria-label="Previous Image" class="absolute left-4 sm:left-8 text-white bg-white/20 hover:bg-white/40 p-3 rounded-full border-2 border-white transition-colors">
+            <span class="material-symbols-outlined text-4xl font-black">chevron_left</span>
+        </button>
+
+        <div class="max-w-4xl max-h-[85vh] flex flex-col items-center" id="lightboxContainer">
+            <img id="lightboxImage" class="max-h-[75vh] max-w-full object-contain rounded-2xl border-4 border-white shadow-2xl transition-transform duration-300" src="" alt=""/>
+            <p id="lightboxCaption" class="text-white text-lg font-black mt-4 text-center bg-black/50 px-6 py-2 rounded-full border border-white/20"></p>
+        </div>
+
+        <button onclick="changeLightboxImage(1)" aria-label="Next Image" class="absolute right-4 sm:right-8 text-white bg-white/20 hover:bg-white/40 p-3 rounded-full border-2 border-white transition-colors">
+            <span class="material-symbols-outlined text-4xl font-black">chevron_right</span>
+        </button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-20 sm:bottom-6 right-6 bg-on-background text-white px-6 py-4 rounded-2xl border-4 border-accent font-black shadow-[6px_6px_0px_#D4A017] transition-all duration-300 transform translate-y-24 opacity-0 z-50 text-base">
+        Notification
+    </div>
+
+    <script>
+        // 1. Theme Initialization with LocalStorage Persistence
+        function initTheme() {
+            const savedTheme = localStorage.getItem('sunshine_theme');
+            const themeIcon = document.getElementById('themeIcon');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                if (themeIcon) themeIcon.textContent = 'light_mode';
+            } else {
+                document.documentElement.classList.remove('dark');
+                if (themeIcon) themeIcon.textContent = 'dark_mode';
+            }
+        }
+
+        function toggleTheme() {
+            const themeIcon = document.getElementById('themeIcon');
+            const isDark = document.documentElement.classList.toggle('dark');
+            if (isDark) {
+                localStorage.setItem('sunshine_theme', 'dark');
+                if (themeIcon) themeIcon.textContent = 'light_mode';
+                showToast('🌙 Switched to Warm Dark Theme');
+            } else {
+                localStorage.setItem('sunshine_theme', 'light');
+                if (themeIcon) themeIcon.textContent = 'dark_mode';
+                showToast('☀️ Switched to Light Theme');
+            }
+        }
+
+        // Initialize Theme right away
+        initTheme();
+
+        // Preloader Auto-Hide Handler
+        function hidePreloader() {
+            const preloader = document.getElementById('preloader');
+            if (preloader && preloader.style.display !== 'none') {
+                preloader.classList.add('opacity-0');
+                setTimeout(() => preloader.style.display = 'none', 400);
+            }
+        }
+        const preloaderTimer = setTimeout(hidePreloader, 1200);
+        window.addEventListener('load', () => {
+            clearTimeout(preloaderTimer);
+            hidePreloader();
+        });
+
+        // Homepage Categories (6 Filter Pills)
+        const homepageCategories = [
+            { id: "all", label: "All" },
+            { id: "veg", label: "Veg" },
+            { id: "nonveg", label: "Non-Veg" },
+            { id: "pizza", label: "Pizza" },
+            { id: "chinese", label: "Chinese" },
+            { id: "shakes", label: "Shakes" }
+        ];
+
+        // All 19 Full Menu Categories
+        const fullCategories = [
+            { id: "appetizers", label: "Appetizers" },
+            { id: "starters", label: "Starters" },
+            { id: "tandoor", label: "Tandoor" },
+            { id: "burger", label: "Burger" },
+            { id: "sandwich", label: "Sandwich" },
+            { id: "pizza", label: "Pizza" },
+            { id: "maggi", label: "Maggi" },
+            { id: "pasta", label: "Pasta" },
+            { id: "momos", label: "Momos" },
+            { id: "noodles", label: "Noodles" },
+            { id: "rice_biryani", label: "Rice & Biryani" },
+            { id: "main_course_veg", label: "Veg Main Course" },
+            { id: "main_course_chicken", label: "Chicken Main Course" },
+            { id: "soups", label: "Soups" },
+            { id: "shakes", label: "Shakes" },
+            { id: "mocktails", label: "Mocktails" },
+            { id: "fries", label: "French Fries" },
+            { id: "sizzlers", label: "Sizzlers" }
+        ];
+
+        // Complete Sunshine Cafe Dishes Dataset (6 Featured Dishes flagged isFeatured: true)
+        const fullMenuData = [
+            { id: 25, name: "Sunshine Special Veg Maggi", category: "chinese", isVeg: true, isFeatured: true, price: 145, tag: "⭐ Chef's Special", desc: "Loaded with fresh farm vegetables, butter, and house secret spices.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNXNpBFRXCWlMc-fRDcbgR7XW7Tgwi680DpU0cH9v3A1WnyYdIlEEkc_e3Ck8nAty835cDRpXjUnJqCFxM_Lvu8sKVV3KPdsOJbkDaFB2KEQqVinBQ7WY3F72fNIBnFsRzAI2H5Ftbw_9uYF-_a6J98WSzYTP-CEBD_jjLqekWLWIoLP247mXMNjl7HXcpelZ2jmr8kYXrgMty2pRMwhecn0HHQ_UYhVLCUnaRdzWxCCX6t8hGYnV3TLGJ0ecGUbusF9oc5TFhuKLO" },
+            { id: 22, name: "Sunshine Special Chicken Pizza", category: "pizza", isVeg: false, isFeatured: true, price: 330, tag: "🔥 Best Seller", desc: "Loaded chicken tikka chunks, capsicum, olives, jalapenos & double smoked cheese.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDAfm51TbCP9b_FI6gz_liBqaP9tMry8E11j4eH91KZ8xDKHzj2Hm_2d9f6SqxWxadz-qHE0F1egM5Qa6NlVUGz78Ffd1vedespDbFCrptJk96_CS2YEFZ3oinroYJ8s9-xFt0D0uKkuqF-6tTi75oOK4dbJ6Ybj262TZuBQkSqYbouuXZvV8dxvn_s8IJKGINLLiSldq7yqS88jaCK8GKOxsOIstbbrhzQYjFbQgLevw1zkMLEOvzDC729CM1_wd4ms0YVj9IAcbCp" },
+            { id: 7, name: "Chicken Tikka", category: "nonveg", isVeg: false, isFeatured: true, price: 350, tag: "🔥 Best Seller", desc: "Succulent tender chicken chunks marinated in rich tandoori spices.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDAfm51TbCP9b_FI6gz_liBqaP9tMry8E11j4eH91KZ8xDKHzj2Hm_2d9f6SqxWxadz-qHE0F1egM5Qa6NlVUGz78Ffd1vedespDbFCrptJk96_CS2YEFZ3oinroYJ8s9-xFt0D0uKkuqF-6tTi75oOK4dbJ6Ybj262TZuBQkSqYbouuXZvV8dxvn_s8IJKGINLLiSldq7yqS88jaCK8GKOxsOIstbbrhzQYjFbQgLevw1zkMLEOvzDC729CM1_wd4ms0YVj9IAcbCp" },
+            { id: 35, name: "Chicken Biryani", category: "nonveg", isVeg: false, isFeatured: true, price: 210, tag: "⭐ Signature", desc: "Aromatic basmati rice layered with spiced marinated chicken cooked on dum.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBzkJu3dUN4zDIYh7R511mdkILaoix9K47toakUJZAYuvafEKdCTDh_fkmY_ew0Go9TdY4ZhiX47NyRpEmoYIpZbPMTGz7mmxROCznU7rZZ8eyecHcu7HZn_ModvbhmpXby3AYpqHIkAQ447f6sW9s3q3YISyCBGFVBius4sJ-vUG1DQMdqmApkEaRKfsvygeko8O1qxenWuJNJcwCXgWXijlxDog26Jw2miBUT-J3GJg4C9-fn7JMfu-epKy5_8ZtAZKYID_n7VqdM" },
+            { id: 36, name: "Paneer Butter Masala", category: "veg", isVeg: true, isFeatured: true, price: 240, tag: "❤️ Customer Favourite", desc: "Fresh cottage cheese cooked in a rich, buttery tomato gravy.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC0vwWdZ6RI0eooQyVPKcvHsmY8Xm3rqm4NGHi0NI9MVEt9ROn9pW-NnkHSVrypkIudi1rXHwCQgfUL8GpEvN6rYEtPuKs0qjmEHD2ulKYVKUzcSShb9SxAlxJY3rf6-TyJjRK4U_Ek-ARTrcVET_yW1nQ60TjAR314hHnv19LVZxiXLkbfzARGYGNGYc5Ev_MgvIzmrQ8bqbWmkdaNNc71WudVNPY5ZBi8WNX2KT1AHwq7KIO2CodAL9CnlH8VMOTjiTy5VJybBWYh" },
+            { id: 42, name: "Signature Cold Coffee", category: "shakes", isVeg: true, isFeatured: true, price: 90, tag: "⭐ Best Seller", desc: "Thick roasted espresso blended with ice cream and dark chocolate drizzle.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCVtf-G7fZtWMTcfKZpla8UtDhqJ0U5hKMZBOrsMGL7_7LBUsEAUhLt8jgi6pE6k677-jAEJ9tumi6EaTkmEcLMglkl7MDjd9L1uris6yfoPtXToNTxBs80WTylQxT3zOsg3Z4dSeTESkp_VGXirlbS5TYp2E37fqLbfhx8lTfg1iOYyfdcihiw8kR-Seon1NKygw-cb2z_2fxQyApHyblSSCGxukv2zVQKhaN7hswSwJPVzV5Qr5PBEF3roTDOIbhaer2gozELLXfD" },
+
+            // Additional Full Menu Items
+            { id: 1, name: "Corn Chaat", category: "appetizers", isVeg: true, price: 110, tag: "❤️ Customer Favourite", desc: "Crispy sweet corn tossed with tangy Indian spices.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCNXNpBFRXCWlMc-fRDcbgR7XW7Tgwi680DpU0cH9v3A1WnyYdIlEEkc_e3Ck8nAty835cDRpXjUnJqCFxM_Lvu8sKVV3KPdsOJbkDaFB2KEQqVinBQ7WY3F72fNIBnFsRzAI2H5Ftbw_9uYF-_a6J98WSzYTP-CEBD_jjLqekWLWIoLP247mXMNjl7HXcpelZ2jmr8kYXrgMty2pRMwhecn0HHQ_UYhVLCUnaRdzWxCCX6t8hGYnV3TLGJ0ecGUbusF9oc5TFhuKLO" },
+            { id: 2, name: "Garlic Bread with Cheese", category: "appetizers", isVeg: true, price: 130, tag: "⭐ Chef's Special", desc: "Oven-baked crusty garlic bread with cheese.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAFe6g7JAj05RCByz8i5EtHIrSBkj23bwvVPTCJcdJyjUmQneITzzOky5g4-1D-9eMUz2s3wEAlUo6gKY6S2LbZIXz2zgiD8yVHfRCuFwpIFw5KAjEjWjTq6WwH1EhFYSIE7F3vL6blgyI1zLRr12QWv07_QhRQolOTbgRBXp3F6HEN7We0eDW6zG2GPJ83-_vNA0TVhCr2cIyo6N2FrOtQRLJZTpOwZfXiUwW3s4SrH7VH3cuxISX8xMMcENgISByWP9fhO54q1qBK" },
+            { id: 8, name: "Veg Burger", category: "burger", isVeg: true, price: 90, tag: "🌱 Classic", desc: "Crispy vegetable patty with fresh lettuce and mayo.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBk_zxz1FLBRXeGr7a0_T3giLF2mcVrbIfQyD8KSwhEqjL7AG8WHm_ms583h3P3w1IXOMMqCYF4H_mATJuGdmTehpE0poaPgYt6qJIgpI25kXcvpR_HbFQ4mXsT4Oki4657uGImTB_pBRGqBh5b-VVHh7tGShVY6AIEpbbs2bfLzk914XBHqRnct2TIpGtJCJyWPjHViNvFJtUZNQky3jjWxUqsIDV8WNsI1aEYJzKKgB2GbeEuhRfhAtAUCz1xIUpXNyiVzRauI5Gk" },
+            { id: 16, name: "Margherita Pizza", category: "pizza", isVeg: true, price: 180, tag: "⭐ Italian Classic", desc: "Tomato sauce and double mozzarella cheese.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBk_zxz1FLBRXeGr7a0_T3giLF2mcVrbIfQyD8KSwhEqjL7AG8WHm_ms583h3P3w1IXOMMqCYF4H_mATJuGdmTehpE0poaPgYt6qJIgpI25kXcvpR_HbFQ4mXsT4Oki4657uGImTB_pBRGqBh5b-VVHh7tGShVY6AIEpbbs2bfLzk914XBHqRnct2TIpGtJCJyWPjHViNvFJtUZNQky3jjWxUqsIDV8WNsI1aEYJzKKgB2GbeEuhRfhAtAUCz1xIUpXNyiVzRauI5Gk" },
+            { id: 28, name: "Steamed Momos", category: "momos", isVeg: true, price: 90, tag: "🌱 Pure Veg", desc: "Steamed dumplings filled with vegetables.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBMGH__JNIPVLqyJ5L3NUZCf4H71sRH_QHpcbaHUxnTeo58acYsVq9W3J9pmJQTRQAhojrCvtRYrK6b85t28PFIxjS3fDj4XM05SgrQf8fOft6gtaiWK1YY9PBBNgi4SQ9wWR2cjGTpqGMcyPZjEv_H04P0E61mNEiazmN19kavOjwSV7r7oaTb8VwAye_mrDAdEgJPtM3uNjF4RkZbixPBpXWBRK1fhWpvetjDekMThtqKMjNnqylCqERdaZZVeCkvv38nkSuijfJO" },
+            { id: 39, name: "Butter Chicken", category: "main_course_chicken", isVeg: false, price: 340, tag: "⭐ Chef's Special", desc: "Tandoori chicken simmered in creamy tomato gravy.", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDAfm51TbCP9b_FI6gz_liBqaP9tMry8E11j4eH91KZ8xDKHzj2Hm_2d9f6SqxWxadz-qHE0F1egM5Qa6NlVUGz78Ffd1vedespDbFCrptJk96_CS2YEFZ3oinroYJ8s9-xFt0D0uKkuqF-6tTi75oOK4dbJ6Ybj262TZuBQkSqYbouuXZvV8dxvn_s8IJKGINLLiSldq7yqS88jaCK8GKOxsOIstbbrhzQYjFbQgLevw1zkMLEOvzDC729CM1_wd4ms0YVj9IAcbCp" }
+        ];
+
+        let activeCategory = "all";
+
+        // Render Homepage 6 Category Filter Pills
+        function renderCategories() {
+            const container = document.getElementById('categoryFilterContainer');
+            let html = '';
+            homepageCategories.forEach(cat => {
+                const isActive = cat.id === activeCategory;
+                const activeClasses = isActive 
+                    ? "bg-primary text-white shadow-[4px_4px_0px_#2c1e16]" 
+                    : "bg-surface hover:bg-accent text-on-background";
+                
+                html += `
+                    <button onclick="selectCategory('${cat.id}')" class="px-5 py-2.5 rounded-xl border-2 border-on-background font-black text-sm whitespace-nowrap transition-all flex-shrink-0 ${activeClasses}">
+                        ${cat.label}
+                    </button>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Render Featured 6 Dishes Cards Grid on Homepage
+        function renderMenuDishes() {
+            const container = document.getElementById('menuContainer');
+            
+            // Filter 6 featured items based on selected pill
+            let featuredList = fullMenuData.filter(d => d.isFeatured);
+
+            if (activeCategory === "veg") {
+                featuredList = featuredList.filter(d => d.isVeg);
+            } else if (activeCategory === "nonveg") {
+                featuredList = featuredList.filter(d => !d.isVeg);
+            } else if (activeCategory === "pizza") {
+                featuredList = featuredList.filter(d => d.category === "pizza");
+            } else if (activeCategory === "chinese") {
+                featuredList = featuredList.filter(d => d.category === "chinese");
+            } else if (activeCategory === "shakes") {
+                featuredList = featuredList.filter(d => d.category === "shakes");
+            }
+
+            let html = '';
+            featuredList.forEach(dish => {
+                const vegBadge = dish.isVeg 
+                    ? `<div class="w-4 h-4 border-2 border-green-600 flex items-center justify-center rounded bg-white"><div class="w-2.5 h-2.5 bg-green-600 rounded-full"></div></div>`
+                    : `<div class="w-4 h-4 border-2 border-red-600 flex items-center justify-center rounded bg-white"><div class="w-2.5 h-2.5 bg-red-600 rounded-full"></div></div>`;
+
+                html += `
+                    <div onclick="openDishDetailModal(${dish.id})" class="dish-card cursor-pointer bg-white rounded-3xl overflow-hidden block-border group hover:-translate-y-2.5 hover:shadow-[12px_12px_0px_#2c1e16] transition-all duration-300">
+                        <div class="h-64 overflow-hidden relative border-b-4 border-on-background">
+                            <img alt="${dish.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="${dish.image}"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-50 transition-opacity"></div>
+                            <div class="absolute top-4 left-4 bg-white/95 p-2 rounded-xl border-2 border-on-background shadow-md">
+                                ${vegBadge}
+                            </div>
+                            <div class="absolute top-4 right-4 bg-accent px-4 py-1.5 rounded-xl font-black text-on-background border-2 border-on-background text-xl shadow-[4px_4px_0px_#2c1e16] group-hover:rotate-6 transition-transform">₹${dish.price}</div>
+                        </div>
+                        <div class="p-6 flex flex-col justify-between h-[210px]">
+                            <div>
+                                <h3 class="text-2xl font-black text-on-background mb-2 group-hover:text-primary transition-colors">${dish.name}</h3>
+                                <p class="text-sm text-on-surface-variant font-semibold line-clamp-2 leading-relaxed">${dish.desc}</p>
+                            </div>
+                            
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-black text-sm w-fit mt-2">
+                                ${dish.tag}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function selectCategory(catId) {
+            activeCategory = catId;
+            renderCategories();
+            renderMenuDishes();
+        }
+
+        // Open Food Card Detail Popup Modal
+        function openDishDetailModal(dishId) {
+            const dish = fullMenuData.find(d => d.id === dishId);
+            if (!dish) return;
+
+            const modal = document.getElementById('dishDetailModal');
+            const content = document.getElementById('dishDetailContent');
+
+            const vegBadge = dish.isVeg 
+                ? `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-green-100 text-green-800 border-2 border-green-600 font-extrabold text-sm"><span class="w-2.5 h-2.5 bg-green-600 rounded-full"></span> Pure Veg</span>`
+                : `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-red-100 text-red-800 border-2 border-red-600 font-extrabold text-sm"><span class="w-2.5 h-2.5 bg-red-600 rounded-full"></span> Non-Veg</span>`;
+
+            content.innerHTML = `
+                <div class="relative rounded-2xl overflow-hidden border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] h-64 sm:h-80">
+                    <img src="${dish.image}" alt="${dish.name}" class="w-full h-full object-cover"/>
+                    <div class="absolute top-4 right-4 bg-accent px-5 py-2 rounded-2xl font-black text-2xl border-2 border-on-background shadow-[4px_4px_0px_#2c1e16]">₹${dish.price}</div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="flex flex-wrap items-center gap-3">
+                        ${vegBadge}
+                        <span class="px-3 py-1 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-extrabold text-sm">${dish.tag}</span>
+                    </div>
+
+                    <h2 class="text-3xl font-black text-on-background">${dish.name}</h2>
+                    <p class="text-base text-on-surface-variant font-semibold leading-relaxed">${dish.desc}</p>
+                </div>
+
+                <div class="pt-4 border-t-4 border-on-background flex flex-wrap gap-4">
+                    <button onclick="closeDishDetailModal(); openBookingModal();" class="flex-1 bg-primary text-white py-3.5 rounded-xl border-4 border-on-background font-black text-base uppercase shadow-[4px_4px_0px_#2c1e16] hover:bg-secondary block-border flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-xl">table_restaurant</span> Reserve a Table
+                    </button>
+                    <a href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!%20I%20am%20interested%20in%20trying%20${encodeURIComponent(dish.name)}" target="_blank" class="flex-1 bg-[#25D366] text-white py-3.5 rounded-xl border-4 border-on-background font-black text-base uppercase shadow-[4px_4px_0px_#2c1e16] hover:bg-[#1eb052] block-border flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-xl">chat</span> Chat on WhatsApp
+                    </a>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeDishDetailModal() {
+            document.getElementById('dishDetailModal').classList.add('hidden');
+        }
+
+        // View Full Menu Book Modal with All 19 Categories
+        function openFullMenuModal() {
+            const modal = document.getElementById('fullMenuModal');
+            const container = document.getElementById('fullMenuBookContainer');
+
+            let html = '';
+            fullCategories.forEach(cat => {
+                const catDishes = fullMenuData.filter(d => d.category === cat.id);
+                if (catDishes.length === 0) return;
+
+                html += `
+                    <div class="bg-surface-container-high p-6 rounded-2xl border-4 border-on-background shadow-[6px_6px_0px_#2c1e16]">
+                        <h4 class="text-2xl font-black text-primary border-b-4 border-primary pb-2 mb-4 uppercase tracking-wider">${cat.label}</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                `;
+
+                catDishes.forEach(dish => {
+                    html += `
+                        <div class="flex justify-between items-start bg-white p-4 rounded-xl border-2 border-on-background/20 cursor-pointer hover:border-primary transition-colors" onclick="openDishDetailModal(${dish.id})">
+                            <div>
+                                <h5 class="text-lg font-black flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full ${dish.isVeg ? 'bg-green-600' : 'bg-red-600'}"></span> ${dish.name}
+                                </h5>
+                                <p class="text-xs text-on-surface-variant font-semibold mt-1">${dish.desc}</p>
+                            </div>
+                            <span class="text-lg font-black text-accent bg-accent/20 px-3 py-1 rounded-lg border border-on-background/20 shrink-0 ml-2">₹${dish.price}</span>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            modal.classList.remove('hidden');
+        }
+
+        function closeFullMenuModal() {
+            document.getElementById('fullMenuModal').classList.add('hidden');
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        // Table & Event Reservation Modal Handler
+        const bookingModal = document.getElementById('bookingModal');
+        function openBookingModal() {
+            bookingModal.classList.remove('hidden');
+        }
+        function closeBookingModal() {
+            bookingModal.classList.add('hidden');
+        }
+
+        function submitBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('bookingName').value;
+            const phone = document.getElementById('bookingPhone').value;
+            const date = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
+            const guests = document.getElementById('bookingGuests').value;
+            const occasion = document.getElementById('bookingOccasion').value;
+            const notes = document.getElementById('bookingNotes').value || 'None';
+
+            const prefilledMsg = `Hello Sunshine Cafe & Restaurant,
+
+I would like to reserve a dine-in table/event.
+
+Name: ${name}
+Phone: ${phone}
+Date: ${date}
+Time: ${time}
+Guests: ${guests}
+Occasion: ${occasion}
+Additional Notes: ${notes}
+
+Please confirm my reservation.`;
+
+            const whatsappUrl = `https://wa.me/919301059399?text=${encodeURIComponent(prefilledMsg)}`;
+            window.open(whatsappUrl, '_blank');
+            closeBookingModal();
+            showToast('🎉 Redirecting to WhatsApp for reservation confirmation!');
+        }
+
+        // Gallery Lightbox Handlers
+        const galleryData = [
+            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDJX96KNYOhVzG48a4kJn9lySgLQ2Cfzro0j2ejmbRDIipb_fbmDTMrtcrlUTpWT-wFY50_TIJH5N63perQ55OcbOtLtha5RjWVefLXkKNMcdeI-c49ukNaRp5fYtrIaS39LvBWoS2gn0M6soqHbITC1ONeUjJnXLSlcJ7A-hvA6DdYrAQ_HQ92PooTTrAW_7LrQRyDCFDupyxS_xrf2o4KfmRS_fNvJc99DBRifyqfeVZTbJd3VxnR-sZ0LQ945Qw5YT3qfG-AUCCl", title: "Restaurant Interior" },
+            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAFe6g7JAj05RCByz8i5EtHIrSBkj23bwvVPTCJcdJyjUmQneITzzOky5g4-1D-9eMUz2s3wEAlUo6gKY6S2LbZIXz2zgiD8yVHfRCuFwpIFw5KAjEjWjTq6WwH1EhFYSIE7F3vL6blgyI1zLRr12QWv07_QhRQolOTbgRBXp3F6HEN7We0eDW6zG2GPJ83-_vNA0TVhCr2cIyo6N2FrOtQRLJZTpOwZfXiUwW3s4SrH7VH3cuxISX8xMMcENgISByWP9fhO54q1qBK", title: "Delicious Food Spread" },
+            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBrmFfwGPxAp9jnbB09yivi8hvxFf6ZSd6YC2Dx8WOtvM5P_8_dR7b-ATBUynpkwsj_whZF_CI1XffeptIJl0ls0Sss3NrpXTbPLLECGVTnpDVgh7ZKMQoNYbzvblpKzOESXWNM8rUCbaVh162TsKfHh-5g1-XUODaGKtGcBT51equQLXwCybg2guJNrLdHZ9vwpXuJX1fcP6QZKvV7WlB4c04s8G-0PLx9fSPD_v8bvIwyv1zPVkKYxNqsP50cy_pkgQ-hl1z334z-", title: "Warm Dining Ambiance" },
+            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBVTseIN4F3ufHXZ8DmuoM8H_uB3vX9y-hRZazezYarzDIIP9rp3K3Arp83W89XxMmGjzzfAZEHO5y7P3Gn27q1snv34DL3jjSzTUqYkTbdGvUCND4j6X4TF_IcfBKICGz7QJLTp9NT_rBWQLddnLRb8VTPm49BqFTinroVHMHz3LhYRxXejExeX6tem05oi5mzbnJIxcI2oMJKNm7ZZcDhAE4dDGvJXzVAVN6m2B-GN7W5CZDoKJTr5I9Y3gb8v0wpEsF7HHAKHovD", title: "Chef Preparing Signature Dishes" },
+            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAY2hyUuQR33tzpHnIcC42LTKmi_6OqtW6C0VvvR3pgvL6duFEAMr_dzU6RPdBWjUEXkAXY13ByeClYzC99pKV43y8a-x00GcHbRV03pWsvqfg0rdrquGk243qJBQGIhDyUFLLmikTbFUapjE_DMVkdAzBJRlhYwtMR2ZxiM2ubRI61WL8HeFSs_KLpCysMYK2xMZdIew2ZPmHDTcy1114XMSSnqjKrQeGcKzsKeoesZ1aj8bYK2RTo0-n9MlIksaGp6zrvgOx7C82i", title: "Special Event Setup" },
+            { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBk_zxz1FLBRXeGr7a0_T3giLF2mcVrbIfQyD8KSwhEqjL7AG8WHm_ms583h3P3w1IXOMMqCYF4H_mATJuGdmTehpE0poaPgYt6qJIgpI25kXcvpR_HbFQ4mXsT4Oki4657uGImTB_pBRGqBh5b-VVHh7tGShVY6AIEpbbs2bfLzk914XBHqRnct2TIpGtJCJyWPjHViNvFJtUZNQky3jjWxUqsIDV8WNsI1aEYJzKKgB2GbeEuhRfhAtAUCz1xIUpXNyiVzRauI5Gk", title: "Special Gourmet Platter" }
+        ];
+
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        const lightboxContainer = document.getElementById('lightboxContainer');
+
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            updateLightboxContent();
+            lightboxModal.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.add('hidden');
+        }
+
+        function changeLightboxImage(direction) {
+            currentLightboxIndex = (currentLightboxIndex + direction + galleryData.length) % galleryData.length;
+            updateLightboxContent();
+        }
+
+        function updateLightboxContent() {
+            const item = galleryData[currentLightboxIndex];
+            lightboxImage.src = item.src;
+            lightboxCaption.textContent = `${item.title} (${currentLightboxIndex + 1} of ${galleryData.length})`;
+        }
+
+        // Navbar Glassmorphism Transformation on Scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY >= 70) {
+                navbar.classList.add('glass-nav-scrolled');
+            } else {
+                navbar.classList.remove('glass-nav-scrolled');
+            }
+        });
+
+        // Initialize Menu rendering
+        renderCategories();
+        renderMenuDishes();
+    </script>
+</body>
+</html>
