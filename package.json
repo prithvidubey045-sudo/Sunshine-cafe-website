@@ -1,0 +1,22 @@
+{
+  "name": "sunshine-cafe-website",
+  "version": "1.0.0",
+  "description": "Official Dine-In Website for Sunshine Cafe & Restaurant, Pithora",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8080",
+    "dev": "python -m http.server 8080",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "keywords": [
+    "restaurant",
+    "cafe",
+    "dine-in",
+    "pithora",
+    "sunshine-cafe",
+    "food",
+    "menu"
+  ],
+  "author": "Sunshine Cafe & Restaurant",
+  "license": "MIT"
+}
