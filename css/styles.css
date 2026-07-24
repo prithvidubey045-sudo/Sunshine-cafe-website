@@ -1,6 +1,12 @@
 /* Smooth Theme Transitions */
 *, *::before, *::after {
     transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -9,6 +15,8 @@ body {
     background-image: 
         radial-gradient(at 0% 0%, rgba(230, 126, 34, 0.08) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(212, 160, 23, 0.08) 0px, transparent 50%);
+    overflow-x: hidden;
+    touch-action: manipulation;
 }
 
 .block-border {
@@ -23,7 +31,7 @@ body {
 }
 
 .block-border:active {
-    transform: translate(3px, 3px);
+    transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px #2c1e16;
 }
 
@@ -67,16 +75,16 @@ body {
 
 .glass-nav-scrolled {
     top: 12px !important;
-    left: 16px !important;
-    right: 16px !important;
-    width: calc(100% - 32px) !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: calc(100% - 24px) !important;
     max-width: 1440px !important;
     margin-left: auto !important;
     margin-right: auto !important;
     border-radius: 22px !important;
     padding-top: 0.6rem !important;
     padding-bottom: 0.6rem !important;
-    background-color: rgba(255, 241, 224, 0.78) !important;
+    background-color: rgba(255, 241, 224, 0.85) !important;
     backdrop-filter: blur(18px) !important;
     -webkit-backdrop-filter: blur(18px) !important;
     border: 1px solid rgba(255, 255, 255, 0.4) !important;
@@ -84,9 +92,22 @@ body {
 }
 
 .dark .glass-nav-scrolled {
-    background-color: rgba(26, 16, 10, 0.82) !important;
+    background-color: rgba(26, 16, 10, 0.88) !important;
     border: 1px solid rgba(245, 224, 198, 0.22) !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Mobile Slide-in Drawer Animations */
+#mobileDrawer {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#mobileDrawer.drawer-open {
+    transform: translateX(0) !important;
+}
+
+#mobileDrawerOverlay {
+    transition: opacity 0.3s ease;
 }
 
 /* Floating Particle Animations */
@@ -112,7 +133,7 @@ body {
 .animate-pulse-glow { animation: pulseGlow 4s ease-in-out infinite; }
 .animate-ring-pulse { animation: ringPulse 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
 
-/* Continuous Infinite Slider */
+/* Continuous Infinite Review Slider */
 @keyframes infiniteScroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -122,10 +143,13 @@ body {
     display: flex;
     width: max-content;
     animation: infiniteScroll 35s linear infinite;
+    will-change: transform;
 }
 
-.infinite-slider-track:hover {
-    animation-play-state: paused;
+.infinite-slider-track:hover,
+.infinite-slider-track:active,
+.infinite-slider-track.paused {
+    animation-play-state: paused !important;
 }
 
 /* Hide Horizontal Scrollbar for Category Pills */
@@ -133,8 +157,25 @@ body {
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* Custom Scrollbar */
-::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: #FFF1E0; }
-::-webkit-scrollbar-thumb { background: #2c1e16; border-radius: 5px; }
+::-webkit-scrollbar-thumb { background: #2c1e16; border-radius: 4px; }
 .dark ::-webkit-scrollbar-track { background: #1a100a; }
 .dark ::-webkit-scrollbar-thumb { background: #E67E22; }
+
+/* Safe Area Inset Support for Modern Mobile Browsers */
+.safe-pb {
+    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+}
+
+/* Touch Target Minimum Dimensions (44px) */
+button, a, input, select, textarea {
+    min-height: 44px;
+}
+.touch-target {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Sunshine Cafe & Restaurant",
+  "short_name": "Sunshine Cafe",
+  "description": "Official Dine-In Website & Complete Digital Menu for Sunshine Cafe & Restaurant, Pithora",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FFF1E0",
+  "theme_color": "#FFF1E0",
+  "lang": "en",
+  "scope": "./",
+  "categories": ["food", "dining", "restaurant", "lifestyle"],
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

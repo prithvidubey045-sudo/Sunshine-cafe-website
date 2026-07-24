@@ -1,26 +1,28 @@
 // Theme Initialization with LocalStorage Persistence
 function initTheme() {
     const savedTheme = localStorage.getItem('sunshine_theme');
-    const themeIcon = document.getElementById('themeIcon');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    const themeIcons = document.querySelectorAll('.themeIcon');
+    const isDark = savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    if (isDark) {
         document.documentElement.classList.add('dark');
-        if (themeIcon) themeIcon.textContent = 'light_mode';
+        themeIcons.forEach(icon => icon.textContent = 'light_mode');
     } else {
         document.documentElement.classList.remove('dark');
-        if (themeIcon) themeIcon.textContent = 'dark_mode';
+        themeIcons.forEach(icon => icon.textContent = 'dark_mode');
     }
 }
 
 function toggleTheme() {
-    const themeIcon = document.getElementById('themeIcon');
+    const themeIcons = document.querySelectorAll('.themeIcon');
     const isDark = document.documentElement.classList.toggle('dark');
     if (isDark) {
         localStorage.setItem('sunshine_theme', 'dark');
-        if (themeIcon) themeIcon.textContent = 'light_mode';
+        themeIcons.forEach(icon => icon.textContent = 'light_mode');
         showToast('🌙 Switched to Warm Dark Theme');
     } else {
         localStorage.setItem('sunshine_theme', 'light');
-        if (themeIcon) themeIcon.textContent = 'dark_mode';
+        themeIcons.forEach(icon => icon.textContent = 'dark_mode');
         showToast('☀️ Switched to Light Theme');
     }
 }
@@ -44,11 +46,11 @@ function renderCategories() {
     homepageCategories.forEach(cat => {
         const isActive = cat.id === activeCategory;
         const activeClasses = isActive 
-            ? "bg-primary text-white shadow-[4px_4px_0px_#2c1e16]" 
+            ? "bg-primary text-white shadow-[4px_4px_0px_#2c1e16] dark:shadow-[4px_4px_0px_#f5e0c6]" 
             : "bg-surface hover:bg-accent text-on-background";
         
         html += `
-            <button onclick="selectCategory('${cat.id}')" class="px-5 py-2.5 rounded-xl border-2 border-on-background font-black text-sm whitespace-nowrap transition-all flex-shrink-0 ${activeClasses}">
+            <button onclick="selectCategory('${cat.id}')" class="px-5 py-3 rounded-xl border-2 border-on-background font-black text-sm whitespace-nowrap transition-all flex-shrink-0 touch-target ${activeClasses}">
                 ${cat.label}
             </button>
         `;
@@ -82,22 +84,22 @@ function renderMenuDishes() {
             : `<div class="w-4 h-4 border-2 border-red-600 flex items-center justify-center rounded bg-white"><div class="w-2.5 h-2.5 bg-red-600 rounded-full"></div></div>`;
 
         html += `
-            <div onclick="openDishDetailModal(${dish.id})" class="dish-card cursor-pointer bg-white rounded-3xl overflow-hidden block-border group hover:-translate-y-2.5 hover:shadow-[12px_12px_0px_#2c1e16] transition-all duration-300">
-                <div class="h-64 overflow-hidden relative border-b-4 border-on-background">
+            <div onclick="openDishDetailModal(${dish.id})" class="dish-card cursor-pointer bg-white rounded-3xl overflow-hidden block-border group hover:-translate-y-2.5 hover:shadow-[12px_12px_0px_#2c1e16] transition-all duration-300 flex flex-col h-full">
+                <div class="h-52 sm:h-64 overflow-hidden relative border-b-4 border-on-background shrink-0">
                     <img alt="${dish.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="${dish.image}"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-50 transition-opacity"></div>
                     <div class="absolute top-4 left-4 bg-white/95 p-2 rounded-xl border-2 border-on-background shadow-md">
                         ${vegBadge}
                     </div>
-                    <div class="absolute top-4 right-4 bg-accent px-4 py-1.5 rounded-xl font-black text-on-background border-2 border-on-background text-xl shadow-[4px_4px_0px_#2c1e16] group-hover:rotate-6 transition-transform">₹${dish.price}</div>
+                    <div class="absolute top-4 right-4 bg-accent px-4 py-1.5 rounded-xl font-black text-on-background border-2 border-on-background text-lg sm:text-xl shadow-[4px_4px_0px_#2c1e16] group-hover:rotate-6 transition-transform">₹${dish.price}</div>
                 </div>
-                <div class="p-6 flex flex-col justify-between h-[210px]">
+                <div class="p-5 sm:p-6 flex flex-col justify-between flex-1">
                     <div>
-                        <h3 class="text-2xl font-black text-on-background mb-2 group-hover:text-primary transition-colors">${dish.name}</h3>
+                        <h3 class="text-xl sm:text-2xl font-black text-on-background mb-2 group-hover:text-primary transition-colors">${dish.name}</h3>
                         <p class="text-sm text-on-surface-variant font-semibold line-clamp-2 leading-relaxed">${dish.desc}</p>
                     </div>
                     
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-black text-sm w-fit mt-2">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-black text-xs sm:text-sm w-fit mt-4">
                         ${dish.tag}
                     </div>
                 </div>
@@ -126,9 +128,9 @@ function openDishDetailModal(dishId) {
         : `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-red-100 text-red-800 border-2 border-red-600 font-extrabold text-sm"><span class="w-2.5 h-2.5 bg-red-600 rounded-full"></span> Non-Veg</span>`;
 
     content.innerHTML = `
-        <div class="relative rounded-2xl overflow-hidden border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] h-64 sm:h-80">
+        <div class="relative rounded-2xl overflow-hidden border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] h-52 sm:h-72">
             <img src="${dish.image}" alt="${dish.name}" class="w-full h-full object-cover"/>
-            <div class="absolute top-4 right-4 bg-accent px-5 py-2 rounded-2xl font-black text-2xl border-2 border-on-background shadow-[4px_4px_0px_#2c1e16]">₹${dish.price}</div>
+            <div class="absolute top-4 right-4 bg-accent px-4 py-2 rounded-2xl font-black text-xl sm:text-2xl border-2 border-on-background shadow-[4px_4px_0px_#2c1e16]">₹${dish.price}</div>
         </div>
 
         <div class="space-y-3">
@@ -137,25 +139,27 @@ function openDishDetailModal(dishId) {
                 <span class="px-3 py-1 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-extrabold text-sm">${dish.tag}</span>
             </div>
 
-            <h2 class="text-3xl font-black text-on-background">${dish.name}</h2>
-            <p class="text-base text-on-surface-variant font-semibold leading-relaxed">${dish.desc}</p>
+            <h2 class="text-2xl sm:text-3xl font-black text-on-background">${dish.name}</h2>
+            <p class="text-sm sm:text-base text-on-surface-variant font-semibold leading-relaxed">${dish.desc}</p>
         </div>
 
-        <div class="pt-4 border-t-4 border-on-background flex flex-wrap gap-4">
-            <button onclick="closeDishDetailModal(); openBookingModal();" class="flex-1 bg-primary text-white py-3.5 rounded-xl border-4 border-on-background font-black text-base uppercase shadow-[4px_4px_0px_#2c1e16] hover:bg-secondary block-border flex items-center justify-center gap-2">
+        <div class="pt-4 border-t-4 border-on-background flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <button onclick="closeDishDetailModal(); openBookingModal();" class="w-full sm:flex-1 bg-primary text-white py-3.5 rounded-xl border-4 border-on-background font-black text-sm sm:text-base uppercase shadow-[4px_4px_0px_#2c1e16] hover:bg-secondary block-border flex items-center justify-center gap-2 touch-target">
                 <span class="material-symbols-outlined text-xl">table_restaurant</span> Reserve a Table
             </button>
-            <a href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!%20I%20am%20interested%20in%20trying%20${encodeURIComponent(dish.name)}" target="_blank" class="flex-1 bg-[#25D366] text-white py-3.5 rounded-xl border-4 border-on-background font-black text-base uppercase shadow-[4px_4px_0px_#2c1e16] hover:bg-[#1eb052] block-border flex items-center justify-center gap-2">
+            <a href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!%20I%20am%20interested%20in%20trying%20${encodeURIComponent(dish.name)}" target="_blank" class="w-full sm:flex-1 bg-[#25D366] text-white py-3.5 rounded-xl border-4 border-on-background font-black text-sm sm:text-base uppercase shadow-[4px_4px_0px_#2c1e16] hover:bg-[#1eb052] block-border flex items-center justify-center gap-2 touch-target">
                 <span class="material-symbols-outlined text-xl">chat</span> Chat on WhatsApp
             </a>
         </div>
     `;
 
     modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
 }
 
 function closeDishDetailModal() {
     document.getElementById('dishDetailModal').classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
 }
 
 // View Full Menu Book Modal with All 19 Categories
@@ -169,8 +173,8 @@ function openFullMenuModal() {
         if (catDishes.length === 0) return;
 
         html += `
-            <div class="bg-surface-container-high p-6 rounded-2xl border-4 border-on-background shadow-[6px_6px_0px_#2c1e16]">
-                <h4 class="text-2xl font-black text-primary border-b-4 border-primary pb-2 mb-4 uppercase tracking-wider">${cat.label}</h4>
+            <div class="bg-surface-container-high p-4 sm:p-6 rounded-2xl border-4 border-on-background shadow-[6px_6px_0px_#2c1e16]">
+                <h4 class="text-xl sm:text-2xl font-black text-primary border-b-4 border-primary pb-2 mb-4 uppercase tracking-wider">${cat.label}</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         `;
 
@@ -178,12 +182,12 @@ function openFullMenuModal() {
             html += `
                 <div class="flex justify-between items-start bg-white p-4 rounded-xl border-2 border-on-background/20 cursor-pointer hover:border-primary transition-colors" onclick="openDishDetailModal(${dish.id})">
                     <div>
-                        <h5 class="text-lg font-black flex items-center gap-2">
-                            <span class="w-2.5 h-2.5 rounded-full ${dish.isVeg ? 'bg-green-600' : 'bg-red-600'}"></span> ${dish.name}
+                        <h5 class="text-base sm:text-lg font-black flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full shrink-0 ${dish.isVeg ? 'bg-green-600' : 'bg-red-600'}"></span> ${dish.name}
                         </h5>
-                        <p class="text-xs text-on-surface-variant font-semibold mt-1">${dish.desc}</p>
+                        <p class="text-xs text-on-surface-variant font-semibold mt-1 leading-normal">${dish.desc}</p>
                     </div>
-                    <span class="text-lg font-black text-accent bg-accent/20 px-3 py-1 rounded-lg border border-on-background/20 shrink-0 ml-2">₹${dish.price}</span>
+                    <span class="text-base sm:text-lg font-black text-accent bg-accent/20 px-3 py-1 rounded-lg border border-on-background/20 shrink-0 ml-2">₹${dish.price}</span>
                 </div>
             `;
         });
@@ -196,19 +200,39 @@ function openFullMenuModal() {
 
     container.innerHTML = html;
     modal.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
 }
 
 function closeFullMenuModal() {
     document.getElementById('fullMenuModal').classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
 }
 
-// Mobile Menu Toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
+// Mobile Slide-in Navigation Drawer Handlers
+function openMobileDrawer() {
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('mobileDrawerOverlay');
+    if (drawer && overlay) {
+        overlay.classList.remove('hidden');
+        setTimeout(() => {
+            overlay.classList.remove('opacity-0');
+            drawer.classList.add('drawer-open');
+        }, 10);
+        document.body.classList.add('overflow-hidden');
+    }
+}
+
+function closeMobileDrawer() {
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('mobileDrawerOverlay');
+    if (drawer && overlay) {
+        drawer.classList.remove('drawer-open');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => {
+            overlay.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }, 300);
+    }
 }
 
 // Toast Helper
@@ -225,10 +249,16 @@ function showToast(msg) {
 // Table & Event Reservation Modal Handler
 const bookingModal = document.getElementById('bookingModal');
 function openBookingModal() {
-    if (bookingModal) bookingModal.classList.remove('hidden');
+    if (bookingModal) {
+        bookingModal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
 }
 function closeBookingModal() {
-    if (bookingModal) bookingModal.classList.add('hidden');
+    if (bookingModal) {
+        bookingModal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
 }
 
 function submitBooking(e) {
@@ -261,7 +291,7 @@ Please confirm my reservation.`;
     showToast('🎉 Redirecting to WhatsApp for reservation confirmation!');
 }
 
-// Gallery Lightbox Handlers
+// Gallery Lightbox Handlers with Touch Swipe Support
 const galleryData = [
     { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDJX96KNYOhVzG48a4kJn9lySgLQ2Cfzro0j2ejmbRDIipb_fbmDTMrtcrlUTpWT-wFY50_TIJH5N63perQ55OcbOtLtha5RjWVefLXkKNMcdeI-c49ukNaRp5fYtrIaS39LvBWoS2gn0M6soqHbITC1ONeUjJnXLSlcJ7A-hvA6DdYrAQ_HQ92PooTTrAW_7LrQRyDCFDupyxS_xrf2o4KfmRS_fNvJc99DBRifyqfeVZTbJd3VxnR-sZ0LQ945Qw5YT3qfG-AUCCl", title: "Restaurant Interior" },
     { src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAFe6g7JAj05RCByz8i5EtHIrSBkj23bwvVPTCJcdJyjUmQneITzzOky5g4-1D-9eMUz2s3wEAlUo6gKY6S2LbZIXz2zgiD8yVHfRCuFwpIFw5KAjEjWjTq6WwH1EhFYSIE7F3vL6blgyI1zLRr12QWv07_QhRQolOTbgRBXp3F6HEN7We0eDW6zG2GPJ83-_vNA0TVhCr2cIyo6N2FrOtQRLJZTpOwZfXiUwW3s4SrH7VH3cuxISX8xMMcENgISByWP9fhO54q1qBK", title: "Delicious Food Spread" },
@@ -275,15 +305,23 @@ const lightboxModal = document.getElementById('lightboxModal');
 const lightboxImage = document.getElementById('lightboxImage');
 const lightboxCaption = document.getElementById('lightboxCaption');
 let currentLightboxIndex = 0;
+let touchStartX = 0;
+let touchEndX = 0;
 
 function openLightbox(index) {
     currentLightboxIndex = index;
     updateLightboxContent();
-    if (lightboxModal) lightboxModal.classList.remove('hidden');
+    if (lightboxModal) {
+        lightboxModal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
 }
 
 function closeLightbox() {
-    if (lightboxModal) lightboxModal.classList.add('hidden');
+    if (lightboxModal) {
+        lightboxModal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
 }
 
 function changeLightboxImage(direction) {
@@ -295,8 +333,36 @@ function updateLightboxContent() {
     const item = galleryData[currentLightboxIndex];
     if (lightboxImage && item) {
         lightboxImage.src = item.src;
-        lightboxCaption.textContent = `${item.title} (${currentLightboxIndex + 1} of ${galleryData.length})`;
+        if (lightboxCaption) lightboxCaption.textContent = `${item.title} (${currentLightboxIndex + 1} of ${galleryData.length})`;
     }
+}
+
+// Touch Swipe Detection for Lightbox
+if (lightboxModal) {
+    lightboxModal.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightboxModal.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+}
+
+function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+    if (swipeDistance > 40) {
+        changeLightboxImage(-1); // Swipe Right -> Prev
+    } else if (swipeDistance < -40) {
+        changeLightboxImage(1);  // Swipe Left -> Next
+    }
+}
+
+// Review Slider Touch Pause
+const sliderTrack = document.querySelector('.infinite-slider-track');
+if (sliderTrack) {
+    sliderTrack.addEventListener('touchstart', () => sliderTrack.classList.add('paused'), { passive: true });
+    sliderTrack.addEventListener('touchend', () => sliderTrack.classList.remove('paused'), { passive: true });
 }
 
 // Navbar Glassmorphism Transformation on Scroll
@@ -309,6 +375,17 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('glass-nav-scrolled');
     }
 });
+
+// PWA Service Worker Registration
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then((reg) => {
+            console.log('Sunshine Cafe ServiceWorker registered:', reg.scope);
+        }).catch((err) => {
+            console.log('ServiceWorker registration failed:', err);
+        });
+    });
+}
 
 // Initialize on DOMReady
 initTheme();
