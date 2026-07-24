@@ -108,7 +108,7 @@
 
     <!-- Top Navigation Bar -->
     <header>
-        <nav class="bg-surface/90 backdrop-blur-md border-b-4 border-on-background fixed top-0 w-full z-50 transition-all duration-300 py-2 sm:py-4" id="navbar">
+        <nav class="bg-surface/95 backdrop-blur-md border-b-4 border-on-background fixed top-0 w-full z-50 transition-all duration-300 py-2 sm:py-4" id="navbar">
             <div class="flex justify-between items-center px-3.5 sm:px-8 lg:px-12 max-w-[1500px] mx-auto">
                 <!-- Brand -->
                 <a class="flex items-center gap-2 sm:gap-3 text-xl font-extrabold text-on-background hover:scale-105 transition-transform duration-300" href="#home">
@@ -116,7 +116,7 @@
                     <span class="tracking-wide text-base sm:text-2xl font-black">Sunshine Cafe</span>
                 </a>
 
-                <!-- Desktop Links -->
+                <!-- Desktop Navigation Links -->
                 <ul class="hidden md:flex items-center gap-6 lg:gap-8 font-bold text-xs lg:text-sm uppercase tracking-wider">
                     <li>
                         <a class="nav-link relative text-on-background hover:text-primary transition-colors pb-1 group active-link" href="#home">
@@ -156,14 +156,14 @@
                     </li>
                 </ul>
 
-                <!-- Actions -->
-                <div class="flex items-center gap-1.5 sm:gap-3">
+                <!-- Desktop & Mobile Header Actions -->
+                <div class="flex items-center gap-2 sm:gap-3">
                     <!-- Light / Dark Mode Toggle Button -->
                     <button onclick="toggleTheme()" id="themeToggle" aria-label="Toggle Dark/Light Mode" class="p-1.5 sm:p-2.5 border-2 border-on-background rounded-xl text-on-background bg-surface-container-high hover:bg-primary hover:text-white transition-all active:scale-95 duration-200 touch-target">
                         <span class="material-symbols-outlined themeIcon block transition-transform duration-300 hover:rotate-45 text-xl sm:text-2xl">dark_mode</span>
                     </button>
 
-                    <!-- Reserve Table Button (Desktop/Tablet) -->
+                    <!-- Reserve Table Button (Desktop) -->
                     <button onclick="openBookingModal()" class="hidden sm:flex items-center gap-2 bg-primary text-white px-4 lg:px-5 py-2.5 rounded-xl border-2 border-on-background font-black text-xs lg:text-sm uppercase hover:bg-secondary transition-colors block-border">
                         <span class="material-symbols-outlined text-[20px]">table_restaurant</span>
                         Reserve Table
@@ -174,29 +174,31 @@
                         WhatsApp
                     </a>
 
-                    <!-- Mobile Hamburger Menu Button -->
-                    <button onclick="openMobileDrawer()" aria-label="Open Navigation Menu" class="md:hidden p-1.5 sm:p-2.5 border-2 border-on-background rounded-xl text-on-background hover:bg-primary hover:text-white transition-all active:scale-95 touch-target">
+                    <!-- Mobile Hamburger Icon Button -->
+                    <button onclick="openMobileDrawer()" aria-label="Open Mobile Menu" class="md:hidden p-1.5 sm:p-2.5 border-2 border-on-background rounded-xl text-on-background hover:bg-primary hover:text-white transition-all active:scale-95 touch-target">
                         <span class="material-symbols-outlined text-2xl">menu</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Mobile Drawer Overlay -->
-            <div id="mobileDrawerOverlay" onclick="closeMobileDrawer()" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[55] opacity-0 transition-opacity"></div>
+            <!-- Mobile Slide-in Drawer Dark Overlay -->
+            <div id="mobileDrawerOverlay" onclick="closeMobileDrawer()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[55] opacity-0 transition-opacity"></div>
 
-            <!-- Mobile Right Slide-in Navigation Drawer -->
-            <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-[85%] max-w-xs bg-surface border-l-4 border-on-background z-[60] p-5 flex flex-col justify-between shadow-2xl translate-x-full transition-transform duration-300 overflow-y-auto">
+            <!-- Full-Screen Mobile Slide-in Navigation Drawer (From Right) -->
+            <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-[80%] max-w-[280px] bg-surface border-l-4 border-on-background z-[60] p-5 flex flex-col justify-between shadow-2xl translate-x-full transition-transform duration-300 overflow-y-auto">
                 <div class="space-y-4">
+                    <!-- Drawer Header -->
                     <div class="flex justify-between items-center border-b-4 border-on-background pb-3">
                         <div class="flex items-center gap-2">
                             <img alt="Sunshine Cafe Logo" class="w-8 h-8 rounded-lg border-2 border-on-background object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf6MhLpe1bP7RzYuRMqU7gGKw8UNg4CUXj4y9r2PSC2Yyr3lU61swRTi9CFfyc8k1mF5Uu7VYUyxnHqRd6A9NfPv8WqxibjgWyYAxzIJ8J2OwXkN0UXohZVQb6k20qGIGPrMr0r2eXybdr5X-hveLCy57kAVr0DBvT8PwkEd5_XPvwOmWsMR4zmK09wAPd_dFbvaN_lmbrt4mDyj6rr0lKE6aS4JdH1FtpTw0gNgxCJu7wSrCbic1WpkwZfAtycyAgb5uJyFfI6mt5"/>
-                            <span class="font-black text-lg text-on-background">Sunshine Cafe</span>
+                            <span class="font-black text-base text-on-background">Sunshine Cafe</span>
                         </div>
-                        <button onclick="closeMobileDrawer()" aria-label="Close Menu" class="p-1.5 border-2 border-on-background rounded-xl hover:bg-red-500 hover:text-white transition-colors touch-target">
+                        <button onclick="closeMobileDrawer()" aria-label="Close Menu" class="p-1 border-2 border-on-background rounded-xl hover:bg-red-500 hover:text-white transition-colors touch-target">
                             <span class="material-symbols-outlined block">close</span>
                         </button>
                     </div>
 
+                    <!-- Clean Vertical Navigation Links -->
                     <nav class="flex flex-col space-y-1 font-black text-sm uppercase tracking-wider">
                         <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#home">
                             <span class="material-symbols-outlined text-primary text-xl">home</span> Home
@@ -219,13 +221,10 @@
                     </nav>
                 </div>
 
+                <!-- Drawer Actions: Theme Switcher & WhatsApp Button ONLY -->
                 <div class="space-y-2 pt-3 border-t-4 border-on-background">
                     <button onclick="toggleTheme()" class="w-full flex items-center justify-center gap-2 bg-surface-container-high text-on-background py-2.5 rounded-xl border-2 border-on-background font-black text-xs uppercase touch-target">
                         <span class="material-symbols-outlined themeIcon text-lg">dark_mode</span> Switch Theme
-                    </button>
-
-                    <button onclick="closeMobileDrawer(); openBookingModal();" class="w-full flex items-center justify-center gap-2 bg-primary text-white py-2.5 rounded-xl border-2 border-on-background text-xs block-border font-black uppercase shadow-[3px_3px_0px_#2c1e16] touch-target">
-                        <span class="material-symbols-outlined text-lg">table_restaurant</span> Reserve Table
                     </button>
 
                     <a href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!" target="_blank" class="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white py-2.5 rounded-xl border-2 border-on-background text-xs block-border font-black uppercase shadow-[3px_3px_0px_#2c1e16] touch-target">
@@ -237,8 +236,8 @@
     </header>
 
     <main>
-        <!-- Hero Section (Compact Mobile Height) -->
-        <section class="relative pt-16 pb-4 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-0 lg:min-h-[85vh] flex items-center bg-accent/10 border-b-4 border-on-background" id="home">
+        <!-- Hero Section (Compact Mobile Height: 50-60% Shorter Mobile Page) -->
+        <section class="relative pt-16 pb-3 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden min-h-0 lg:min-h-[85vh] flex items-center bg-accent/10 border-b-4 border-on-background" id="home">
             <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
                 <div class="absolute top-1/6 left-3 sm:left-10 animate-float-slow text-primary/60"><span class="material-symbols-outlined text-xl sm:text-4xl">coffee</span></div>
                 <div class="absolute top-1/3 left-1/4 animate-float-reverse text-secondary/70"><span class="material-symbols-outlined text-2xl sm:text-5xl">eco</span></div>
@@ -251,22 +250,22 @@
             </div>
 
             <div class="max-w-[1500px] mx-auto px-3.5 sm:px-8 lg:px-12 relative z-10 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-3.5 lg:gap-14 items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-14 items-center">
                     
                     <!-- Content Stack -->
-                    <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left gap-2.5 sm:gap-6 bg-surface p-3.5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[5px_5px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16]">
-                        <div class="inline-flex items-center gap-1 px-2.5 py-0.5 sm:px-4 sm:py-2 rounded-xl bg-accent text-on-background border-2 border-on-background font-black shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16] hover:scale-105 transition-transform">
+                    <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left gap-2 sm:gap-6 bg-surface p-3 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16]">
+                        <div class="inline-flex items-center gap-1 px-2 py-0.5 sm:px-4 sm:py-2 rounded-xl bg-accent text-on-background border-2 border-on-background font-black shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">
                             <span class="animate-bounce">⭐</span>
                             <span class="text-[9px] sm:text-xs lg:text-sm uppercase tracking-wider font-extrabold">Pithora's Favourite Dine-in Cafe</span>
                         </div>
 
                         <h1 class="text-2xl min-[375px]:text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-on-background leading-tight tracking-tight">
                             Good Food.<br/>
-                            <span class="text-primary bg-primary/20 px-2.5 sm:px-4 py-0.5 sm:py-1 rounded-xl sm:rounded-2xl transform -skew-x-6 inline-block mt-0.5 sm:mt-2 border-2 sm:border-3 border-primary shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">Great Vibes.</span>
+                            <span class="text-primary bg-primary/20 px-2 sm:px-4 py-0.5 sm:py-1 rounded-xl sm:rounded-2xl transform -skew-x-6 inline-block mt-0.5 sm:mt-2 border-2 sm:border-3 border-primary shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">Great Vibes.</span>
                         </h1>
 
-                        <p class="text-[11px] sm:text-lg lg:text-xl text-on-surface-variant font-semibold bg-surface-container-high p-2.5 sm:p-5 rounded-xl sm:rounded-2xl border border-on-background/20 leading-snug sm:leading-relaxed">
-                            Experience a delightful journey of handcrafted culinary flavors, aromatic coffee blends, and fresh ingredients in our cozy dine-in cafe in Pithora.
+                        <p class="text-[11px] sm:text-lg lg:text-xl text-on-surface-variant font-semibold bg-surface-container-high p-2 sm:p-5 rounded-xl sm:rounded-2xl border border-on-background/20 leading-snug sm:leading-relaxed">
+                            Experience handcrafted culinary flavors, aromatic coffee, and fresh ingredients in our cozy dine-in cafe in Pithora.
                         </p>
 
                         <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-4 pt-0.5 sm:pt-2 w-full">
@@ -275,52 +274,52 @@
                                 <span class="material-symbols-outlined transition-transform duration-300 group-hover:translate-y-1 text-base sm:text-xl">arrow_downward</span>
                             </a>
                             <button onclick="openBookingModal()" class="w-full sm:w-auto bg-surface text-on-background px-4 sm:px-8 py-2.5 sm:py-4 rounded-xl font-extrabold uppercase tracking-wider hover:bg-surface-container-highest transition-colors block-border flex items-center justify-center gap-1.5 text-xs sm:text-base lg:text-lg touch-target">
-                                <span class="material-symbols-outlined text-base sm:text-xl">table_restaurant</span> Reserve a Table
+                                <span class="material-symbols-outlined text-base sm:text-xl">table_restaurant</span> Reserve Table
                             </button>
                         </div>
 
                         <div class="grid grid-cols-3 gap-1.5 sm:gap-4 mt-0.5 sm:mt-4 w-full">
-                            <div class="bg-accent/20 p-2 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-on-background text-center hover:scale-105 transition-transform shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">
-                                <p class="text-base sm:text-2xl lg:text-3xl font-black">4.8 ★</p>
+                            <div class="bg-accent/20 p-1.5 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-on-background text-center hover:scale-105 transition-transform shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">
+                                <p class="text-sm sm:text-2xl lg:text-3xl font-black">4.8 ★</p>
                                 <p class="text-[8px] sm:text-xs uppercase font-extrabold text-on-surface-variant">Rating</p>
                             </div>
-                            <div class="bg-secondary/20 p-2 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-on-background text-center hover:scale-105 transition-transform shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">
-                                <p class="text-base sm:text-2xl lg:text-3xl font-black">500+</p>
+                            <div class="bg-secondary/20 p-1.5 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-on-background text-center hover:scale-105 transition-transform shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">
+                                <p class="text-sm sm:text-2xl lg:text-3xl font-black">500+</p>
                                 <p class="text-[8px] sm:text-xs uppercase font-extrabold text-on-surface-variant">Guests</p>
                             </div>
-                            <div class="bg-tertiary/20 p-2 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-on-background text-center hover:scale-105 transition-transform shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">
-                                <p class="text-base sm:text-2xl lg:text-3xl font-black">100%</p>
+                            <div class="bg-tertiary/20 p-1.5 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-on-background text-center hover:scale-105 transition-transform shadow-[2px_2px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">
+                                <p class="text-sm sm:text-2xl lg:text-3xl font-black">100%</p>
                                 <p class="text-[8px] sm:text-xs uppercase font-extrabold text-on-surface-variant">Cozy Dine-In</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Proportionally Scaled Hero Image Wrapper -->
-                    <div class="lg:col-span-5 relative w-full max-w-[170px] min-[375px]:max-w-[200px] sm:max-w-md lg:max-w-none mx-auto mt-1 lg:mt-0" id="heroImageWrapper">
-                        <div class="relative rounded-xl sm:rounded-[2.5rem] overflow-hidden border-3 sm:border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] sm:shadow-[18px_18px_0px_#2c1e16] aspect-square sm:aspect-[4/5] bg-secondary rotate-1 sm:rotate-2 hover:rotate-0 transition-all duration-500 group">
+                    <!-- Scaled Down Hero Image Wrapper -->
+                    <div class="lg:col-span-5 relative w-full max-w-[140px] min-[375px]:max-w-[170px] sm:max-w-md lg:max-w-none mx-auto mt-1 lg:mt-0" id="heroImageWrapper">
+                        <div class="relative rounded-xl sm:rounded-[2.5rem] overflow-hidden border-3 sm:border-4 border-on-background shadow-[5px_5px_0px_#2c1e16] sm:shadow-[18px_18px_0px_#2c1e16] aspect-square sm:aspect-[4/5] bg-secondary rotate-1 sm:rotate-2 hover:rotate-0 transition-all duration-500 group">
                             <img alt="Sunshine Cafe Special Food" loading="eager" class="w-full h-full object-cover mix-blend-overlay opacity-90 group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk_zxz1FLBRXeGr7a0_T3giLF2mcVrbIfQyD8KSwhEqjL7AG8WHm_ms583h3P3w1IXOMMqCYF4H_mATJuGdmTehpE0poaPgYt6qJIgpI25kXcvpR_HbFQ4mXsT4Oki4657uGImTB_pBRGqBh5b-VVHh7tGShVY6AIEpbbs2bfLzk914XBHqRnct2TIpGtJCJyWPjHViNvFJtUZNQky3jjWxUqsIDV8WNsI1aEYJzKKgB2GbeEuhRfhAtAUCz1xIUpXNyiVzRauI5Gk"/>
                         </div>
 
-                        <div class="absolute top-1.5 -left-1.5 sm:top-8 sm:-left-6 bg-accent p-1.5 sm:p-4 rounded-lg sm:rounded-2xl border-2 sm:border-4 border-on-background flex items-center gap-1 sm:gap-3 animate-float-slow shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] -rotate-6">
-                            <div class="w-6 h-6 sm:w-11 sm:h-11 bg-on-background rounded sm:rounded-xl flex items-center justify-center text-accent relative shrink-0">
-                                <span class="material-symbols-outlined font-bold text-xs sm:text-2xl">schedule</span>
-                                <span class="absolute top-0.5 right-0.5 w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 bg-green-500 rounded-full animate-ping"></span>
+                        <div class="absolute top-1 -left-1 sm:top-8 sm:-left-6 bg-accent p-1 sm:p-4 rounded-lg sm:rounded-2xl border-2 sm:border-4 border-on-background flex items-center gap-1 sm:gap-3 animate-float-slow shadow-[2px_2px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] -rotate-6">
+                            <div class="w-5 h-5 sm:w-11 sm:h-11 bg-on-background rounded sm:rounded-xl flex items-center justify-center text-accent relative shrink-0">
+                                <span class="material-symbols-outlined font-bold text-[10px] sm:text-2xl">schedule</span>
+                                <span class="absolute top-0.5 right-0.5 w-1 h-1 sm:w-2.5 sm:h-2.5 bg-green-500 rounded-full animate-ping"></span>
                             </div>
                             <div>
-                                <p class="text-[8px] sm:text-xs font-black uppercase tracking-wider flex items-center gap-0.5">
-                                    <span class="w-1 h-1 rounded-full bg-green-600 inline-block"></span> Open Today
+                                <p class="text-[7px] sm:text-xs font-black uppercase tracking-wider flex items-center gap-0.5">
+                                    <span class="w-1 h-1 rounded-full bg-green-600 inline-block"></span> Open
                                 </p>
-                                <p class="text-[9px] sm:text-sm font-extrabold bg-white/60 px-1 py-0.5 rounded mt-0.5">10 AM - 11 PM</p>
+                                <p class="text-[8px] sm:text-sm font-extrabold bg-white/60 px-1 py-0.5 rounded mt-0.5">10 AM - 11 PM</p>
                             </div>
                         </div>
 
-                        <div class="absolute bottom-1.5 -right-1.5 sm:bottom-8 sm:-right-6 bg-white p-1.5 sm:p-4 rounded-lg sm:rounded-2xl border-2 sm:border-4 border-on-background flex items-center gap-1 sm:gap-3 animate-float-reverse shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] rotate-3">
-                            <div class="w-6 h-6 sm:w-11 sm:h-11 bg-primary text-white rounded sm:rounded-xl flex items-center justify-center text-[10px] sm:text-xl font-black shadow-md shrink-0">
+                        <div class="absolute bottom-1 -right-1 sm:bottom-8 sm:-right-6 bg-white p-1 sm:p-4 rounded-lg sm:rounded-2xl border-2 sm:border-4 border-on-background flex items-center gap-1 sm:gap-3 animate-float-reverse shadow-[2px_2px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] rotate-3">
+                            <div class="w-5 h-5 sm:w-11 sm:h-11 bg-primary text-white rounded sm:rounded-xl flex items-center justify-center text-[9px] sm:text-xl font-black shadow-md shrink-0">
                                 👍
                             </div>
                             <div>
-                                <p class="text-[8px] sm:text-xs font-black uppercase tracking-wider">Top Rated</p>
-                                <p class="text-[9px] sm:text-sm font-extrabold text-on-surface-variant">In Pithora</p>
+                                <p class="text-[7px] sm:text-xs font-black uppercase tracking-wider">Top Rated</p>
+                                <p class="text-[8px] sm:text-sm font-extrabold text-on-surface-variant">In Pithora</p>
                             </div>
                         </div>
                     </div>
@@ -329,150 +328,150 @@
             </div>
         </section>
 
-        <!-- Homepage Streamlined Featured Menu Section (Top 4 Dishes on Mobile) -->
-        <section class="py-6 sm:py-16 bg-surface-container-high border-b-4 border-on-background" id="menu">
+        <!-- Homepage Featured Menu Section (Only 4 Featured Dishes on Mobile) -->
+        <section class="py-5 sm:py-16 bg-surface-container-high border-b-4 border-on-background" id="menu">
             <div class="max-w-[1500px] mx-auto px-3.5 sm:px-8 lg:px-12">
                 
                 <!-- Section Header -->
-                <div class="flex flex-col md:flex-row justify-between items-center mb-3.5 sm:mb-8 gap-2.5 sm:gap-6 bg-white p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[5px_5px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16] text-center md:text-left">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-3 sm:mb-8 gap-2 sm:gap-6 bg-white p-3 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16] text-center md:text-left">
                     <div>
-                        <h2 class="text-lg sm:text-4xl lg:text-5xl font-black text-on-background mb-0.5 sm:mb-2">Our Popular Dishes</h2>
-                        <p class="text-[10px] sm:text-base text-on-surface-variant font-bold bg-accent/20 inline-block px-2.5 py-0.5 sm:px-4 sm:py-1.5 rounded-lg border border-on-background/20">A curated selection of our guest-favourite specialties.</p>
+                        <h2 class="text-base sm:text-4xl lg:text-5xl font-black text-on-background mb-0.5 sm:mb-2">Our Popular Dishes</h2>
+                        <p class="text-[10px] sm:text-base text-on-surface-variant font-bold bg-accent/20 inline-block px-2 py-0.5 sm:px-4 sm:py-1.5 rounded-lg border border-on-background/20">A curated selection of our guest-favourite specialties.</p>
                     </div>
                 </div>
 
-                <!-- Homepage Category Filter Pills (Scrollable on Mobile) -->
-                <div class="no-scrollbar overflow-x-auto flex items-center gap-2 pb-2.5 mb-3.5 sm:mb-8 border-b-2 border-on-background/10 touch-pan-x" id="categoryFilterContainer">
-                    <!-- Homepage Filter Pills Rendered Here -->
+                <!-- Homepage Category Filter Pills -->
+                <div class="no-scrollbar overflow-x-auto flex items-center gap-2 pb-2 mb-3 sm:mb-8 border-b-2 border-on-background/10 touch-pan-x" id="categoryFilterContainer">
+                    <!-- Category Pills Rendered Here -->
                 </div>
 
-                <!-- Featured 4 Dishes Cards Grid on Mobile -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-8 mb-5 sm:mb-12" id="menuContainer">
-                    <!-- Featured Dish Cards Rendered Here -->
+                <!-- Featured 4 Dishes Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8 mb-4 sm:mb-12" id="menuContainer">
+                    <!-- 4 Dishes Rendered Here on Mobile -->
                 </div>
 
-                <!-- Prominent View Full Digital Menu Button -->
+                <!-- Prominent View Full Menu Button -->
                 <div class="text-center">
-                    <button onclick="openFullMenuModal()" class="w-full sm:w-auto bg-primary text-white px-5 sm:px-10 py-3 sm:py-5 rounded-2xl border-3 sm:border-4 border-on-background font-black text-xs sm:text-xl uppercase shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] hover:bg-secondary transition-all flex items-center justify-center gap-2 sm:gap-3 block-border mx-auto font-bold tracking-wider touch-target">
-                        <span class="material-symbols-outlined text-lg sm:text-3xl">menu_book</span> View Full Digital Menu (19 Categories)
+                    <button onclick="openFullMenuModal()" class="w-full sm:w-auto bg-primary text-white px-5 sm:px-10 py-3 sm:py-5 rounded-2xl border-3 sm:border-4 border-on-background font-black text-xs sm:text-xl uppercase shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] hover:bg-secondary transition-all flex items-center justify-center gap-2 sm:gap-3 block-border mx-auto font-bold tracking-wider touch-target">
+                        <span class="material-symbols-outlined text-base sm:text-3xl">menu_book</span> View Full Digital Menu (19 Categories)
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Why Choose Us Section (Compact Spacing) -->
-        <section class="py-8 sm:py-24 bg-surface border-b-4 border-on-background" id="about">
+        <!-- Why Choose Us Section -->
+        <section class="py-5 sm:py-24 bg-surface border-b-4 border-on-background" id="about">
             <div class="max-w-[1500px] mx-auto px-3.5 sm:px-8 lg:px-12">
-                <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-16 bg-white p-4 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[5px_5px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16] transform -rotate-1">
-                    <h2 class="text-lg sm:text-4xl lg:text-5xl font-black text-on-background mb-1 sm:mb-3">Why Choose Sunshine Cafe</h2>
-                    <p class="text-[10px] sm:text-base text-on-surface-variant font-bold">Uncompromising quality, genuine local hospitality, and mouthwatering dine-in tastes.</p>
+                <div class="text-center max-w-3xl mx-auto mb-4 sm:mb-16 bg-white p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16] transform -rotate-1">
+                    <h2 class="text-base sm:text-4xl lg:text-5xl font-black text-on-background mb-0.5 sm:mb-3">Why Choose Sunshine Cafe</h2>
+                    <p class="text-[10px] sm:text-base text-on-surface-variant font-bold">Uncompromising quality, genuine local hospitality, and delicious dine-in tastes.</p>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-6">
-                    <div class="bg-accent p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
-                        <div class="w-9 h-9 sm:w-14 sm:h-14 mx-auto bg-white border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 text-on-background shadow-md">
-                            <span class="material-symbols-outlined text-lg sm:text-3xl font-bold">eco</span>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-6">
+                    <div class="bg-accent p-2.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[2px_2px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 mx-auto bg-white border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 text-on-background shadow-md">
+                            <span class="material-symbols-outlined text-base sm:text-3xl font-bold">eco</span>
                         </div>
-                        <h3 class="text-[11px] sm:text-lg font-black">Fresh Ingredients</h3>
+                        <h3 class="text-[10px] sm:text-lg font-black">Fresh Ingredients</h3>
                     </div>
 
-                    <div class="bg-primary text-white p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
-                        <div class="w-9 h-9 sm:w-14 sm:h-14 mx-auto bg-white text-primary border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
-                            <span class="material-symbols-outlined text-lg sm:text-3xl font-bold">cleaning_services</span>
+                    <div class="bg-primary text-white p-2.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[2px_2px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 mx-auto bg-white text-primary border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-base sm:text-3xl font-bold">cleaning_services</span>
                         </div>
-                        <h3 class="text-[11px] sm:text-lg font-black text-white">Hygienic Kitchen</h3>
+                        <h3 class="text-[10px] sm:text-lg font-black text-white">Hygienic Kitchen</h3>
                     </div>
 
-                    <div class="bg-surface-container-high p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
-                        <div class="w-9 h-9 sm:w-14 sm:h-14 mx-auto bg-secondary text-white border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
-                            <span class="material-symbols-outlined text-lg sm:text-3xl font-bold">family_restroom</span>
+                    <div class="bg-surface-container-high p-2.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[2px_2px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 mx-auto bg-secondary text-white border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-base sm:text-3xl font-bold">family_restroom</span>
                         </div>
-                        <h3 class="text-[11px] sm:text-lg font-black">Family Friendly</h3>
+                        <h3 class="text-[10px] sm:text-lg font-black">Family Friendly</h3>
                     </div>
 
-                    <div class="bg-surface-container-high p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
-                        <div class="w-9 h-9 sm:w-14 sm:h-14 mx-auto bg-accent text-on-background border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
-                            <span class="material-symbols-outlined text-lg sm:text-3xl font-bold">cake</span>
+                    <div class="bg-surface-container-high p-2.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[2px_2px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 mx-auto bg-accent text-on-background border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-base sm:text-3xl font-bold">cake</span>
                         </div>
-                        <h3 class="text-[11px] sm:text-lg font-black">Party Hosting</h3>
+                        <h3 class="text-[10px] sm:text-lg font-black">Party Hosting</h3>
                     </div>
 
-                    <div class="bg-accent p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
-                        <div class="w-9 h-9 sm:w-14 sm:h-14 mx-auto bg-white text-on-background border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
-                            <span class="material-symbols-outlined text-lg sm:text-3xl font-bold">bolt</span>
+                    <div class="bg-accent p-2.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[2px_2px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 mx-auto bg-white text-on-background border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-base sm:text-3xl font-bold">bolt</span>
                         </div>
-                        <h3 class="text-[11px] sm:text-lg font-black">Fast Service</h3>
+                        <h3 class="text-[10px] sm:text-lg font-black">Fast Service</h3>
                     </div>
 
-                    <div class="bg-primary text-white p-3 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
-                        <div class="w-9 h-9 sm:w-14 sm:h-14 mx-auto bg-white text-primary border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
-                            <span class="material-symbols-outlined text-lg sm:text-3xl font-bold">payments</span>
+                    <div class="bg-primary text-white p-2.5 sm:p-6 rounded-xl sm:rounded-2xl text-center border-2 sm:border-4 border-on-background shadow-[2px_2px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] hover:-translate-y-2 transition-all">
+                        <div class="w-8 h-8 sm:w-14 sm:h-14 mx-auto bg-white text-primary border-2 sm:border-4 border-on-background rounded-lg sm:rounded-2xl flex items-center justify-center mb-1 sm:mb-3 shadow-md">
+                            <span class="material-symbols-outlined text-base sm:text-3xl font-bold">payments</span>
                         </div>
-                        <h3 class="text-[11px] sm:text-lg font-black text-white">Affordable Prices</h3>
+                        <h3 class="text-[10px] sm:text-lg font-black text-white">Affordable Tastes</h3>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section (Compact Card Heights) -->
-        <section class="py-8 sm:py-24 bg-surface-container-high border-b-4 border-on-background" id="gallery">
+        <!-- Gallery Section -->
+        <section class="py-5 sm:py-24 bg-surface-container-high border-b-4 border-on-background" id="gallery">
             <div class="max-w-[1500px] mx-auto px-3.5 sm:px-8 lg:px-12">
-                <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-16 bg-white p-4 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[5px_5px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16] transform rotate-1">
-                    <h2 class="text-lg sm:text-4xl lg:text-5xl font-black text-on-background mb-0.5">Our Moments</h2>
-                    <p class="text-[10px] sm:text-base text-on-surface-variant font-bold bg-secondary/20 inline-block px-2.5 py-0.5 rounded-lg border border-on-background/20">Tap any image to view in fullscreen.</p>
+                <div class="text-center max-w-3xl mx-auto mb-4 sm:mb-16 bg-white p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16] transform rotate-1">
+                    <h2 class="text-base sm:text-4xl lg:text-5xl font-black text-on-background mb-0.5">Our Moments</h2>
+                    <p class="text-[10px] sm:text-base text-on-surface-variant font-bold bg-secondary/20 inline-block px-2 py-0.5 rounded-lg border border-on-background/20">Tap any image for full view.</p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-8">
-                    <div onclick="openLightbox(0)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-accent hover:-translate-y-2 transition-all duration-300">
-                        <div class="h-44 sm:h-80 overflow-hidden relative">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-8">
+                    <div onclick="openLightbox(0)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-accent hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-36 min-[375px]:h-40 sm:h-80 overflow-hidden relative">
                             <img alt="Restaurant Interior" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJX96KNYOhVzG48a4kJn9lySgLQ2Cfzro0j2ejmbRDIipb_fbmDTMrtcrlUTpWT-wFY50_TIJH5N63perQ55OcbOtLtha5RjWVefLXkKNMcdeI-c49ukNaRp5fYtrIaS39LvBWoS2gn0M6soqHbITC1ONeUjJnXLSlcJ7A-hvA6DdYrAQ_HQ92PooTTrAW_7LrQRyDCFDupyxS_xrf2o4KfmRS_fNvJc99DBRifyqfeVZTbJd3VxnR-sZ0LQ945Qw5YT3qfG-AUCCl"/>
                             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                                <span class="material-symbols-outlined text-white text-2xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
                             </div>
                         </div>
                     </div>
 
-                    <div onclick="openLightbox(1)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-primary hover:-translate-y-2 transition-all duration-300">
-                        <div class="h-44 sm:h-80 overflow-hidden relative">
+                    <div onclick="openLightbox(1)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-primary hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-36 min-[375px]:h-40 sm:h-80 overflow-hidden relative">
                             <img alt="Delicious Food Spread" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFe6g7JAj05RCByz8i5EtHIrSBkj23bwvVPTCJcdJyjUmQneITzzOky5g4-1D-9eMUz2s3wEAlUo6gKY6S2LbZIXz2zgiD8yVHfRCuFwpIFw5KAjEjWjTq6WwH1EhFYSIE7F3vL6blgyI1zLRr12QWv07_QhRQolOTbgRBXp3F6HEN7We0eDW6zG2GPJ83-_vNA0TVhCr2cIyo6N2FrOtQRLJZTpOwZfXiUwW3s4SrH7VH3cuxISX8xMMcENgISByWP9fhO54q1qBK"/>
                             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                                <span class="material-symbols-outlined text-white text-2xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
                             </div>
                         </div>
                     </div>
 
-                    <div onclick="openLightbox(2)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-white hover:-translate-y-2 transition-all duration-300">
-                        <div class="h-44 sm:h-80 overflow-hidden relative">
+                    <div onclick="openLightbox(2)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-white hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-36 min-[375px]:h-40 sm:h-80 overflow-hidden relative">
                             <img alt="Warm Dining Ambiance" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrmFfwGPxAp9jnbB09yivi8hvxFf6ZSd6YC2Dx8WOtvM5P_8_dR7b-ATBUynpkwsj_whZF_CI1XffeptIJl0ls0Sss3NrpXTbPLLECGVTnpDVgh7ZKMQoNYbzvblpKzOESXWNM8rUCbaVh162TsKfHh-5g1-XUODaGKtGcBT51equQLXwCybg2guJNrLdHZ9vwpXuJX1fcP6QZKvV7WlB4c04s8G-0PLx9fSPD_v8bvIwyv1zPVkKYxNqsP50cy_pkgQ-hl1z334z-"/>
                             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                                <span class="material-symbols-outlined text-white text-2xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
                             </div>
                         </div>
                     </div>
 
-                    <div onclick="openLightbox(3)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-secondary hover:-translate-y-2 transition-all duration-300">
-                        <div class="h-44 sm:h-80 overflow-hidden relative">
+                    <div onclick="openLightbox(3)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-secondary hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-36 min-[375px]:h-40 sm:h-80 overflow-hidden relative">
                             <img alt="Chef Preparing Signature Dishes" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVTseIN4F3ufHXZ8DmuoM8H_uB3vX9y-hRZazezYarzDIIP9rp3K3Arp83W89XxMmGjzzfAZEHO5y7P3Gn27q1snv34DL3jjSzTUqYkTbdGvUCND4j6X4TF_IcfBKICGz7QJLTp9NT_rBWQLddnLRb8VTPm49BqFTinroVHMHz3LhYRxXejExeX6tem05oi5mzbnJIxcI2oMJKNm7ZZcDhAE4dDGvJXzVAVN6m2B-GN7W5CZDoKJTr5I9Y3gb8v0wpEsF7HHAKHovD"/>
                             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                                <span class="material-symbols-outlined text-white text-2xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
                             </div>
                         </div>
                     </div>
 
-                    <div onclick="openLightbox(4)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-white hover:-translate-y-2 transition-all duration-300">
-                        <div class="h-44 sm:h-80 overflow-hidden relative">
+                    <div onclick="openLightbox(4)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-white hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-36 min-[375px]:h-40 sm:h-80 overflow-hidden relative">
                             <img alt="Special Event Setup" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAY2hyUuQR33tzpHnIcC42LTKmi_6OqtW6C0VvvR3pgvL6duFEAMr_dzU6RPdBWjUEXkAXY13ByeClYzC99pKV43y8a-x00GcHbRV03pWsvqfg0rdrquGk243qJBQGIhDyUFLLmikTbFUapjE_DMVkdAzBJRlhYwtMR2ZxiM2ubRI61WL8HeFSs_KLpCysMYK2xMZdIew2ZPmHDTcy1114XMSSnqjKrQeGcKzsKeoesZ1aj8bYK2RTo0-n9MlIksaGp6zrvgOx7C82i"/>
                             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                                <span class="material-symbols-outlined text-white text-2xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
                             </div>
                         </div>
                     </div>
 
-                    <div onclick="openLightbox(5)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-tertiary hover:-translate-y-2 transition-all duration-300">
-                        <div class="h-44 sm:h-80 overflow-hidden relative">
+                    <div onclick="openLightbox(5)" class="cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden group border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] bg-tertiary hover:-translate-y-2 transition-all duration-300">
+                        <div class="h-36 min-[375px]:h-40 sm:h-80 overflow-hidden relative">
                             <img alt="Special Gourmet Platter" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk_zxz1FLBRXeGr7a0_T3giLF2mcVrbIfQyD8KSwhEqjL7AG8WHm_ms583h3P3w1IXOMMqCYF4H_mATJuGdmTehpE0poaPgYt6qJIgpI25kXcvpR_HbFQ4mXsT4Oki4657uGImTB_pBRGqBh5b-VVHh7tGShVY6AIEpbbs2bfLzk914XBHqRnct2TIpGtJCJyWPjHViNvFJtUZNQky3jjWxUqsIDV8WNsI1aEYJzKKgB2GbeEuhRfhAtAUCz1xIUpXNyiVzRauI5Gk"/>
                             <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span class="material-symbols-outlined text-white text-3xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
+                                <span class="material-symbols-outlined text-white text-2xl sm:text-5xl bg-primary p-2 rounded-full border-2 border-white shadow-lg">zoom_in</span>
                             </div>
                         </div>
                     </div>
@@ -481,99 +480,99 @@
         </section>
 
         <!-- Continuous Infinite Review Slider Section -->
-        <section class="py-8 sm:py-24 bg-surface border-b-4 border-on-background overflow-hidden">
-            <div class="max-w-[1500px] mx-auto px-3.5 sm:px-8 lg:px-12 mb-5 sm:mb-14">
-                <div class="text-center max-w-3xl mx-auto bg-white p-4 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[5px_5px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16]">
-                    <h2 class="text-lg sm:text-4xl lg:text-5xl font-black text-on-background mb-1 sm:mb-3">Guest Reviews</h2>
-                    <div class="flex items-center justify-center gap-0.5 sm:gap-1 mb-1 text-primary">
-                        <span class="material-symbols-outlined text-lg sm:text-3xl font-black">star</span>
-                        <span class="material-symbols-outlined text-lg sm:text-3xl font-black">star</span>
-                        <span class="material-symbols-outlined text-lg sm:text-3xl font-black">star</span>
-                        <span class="material-symbols-outlined text-lg sm:text-3xl font-black">star</span>
-                        <span class="material-symbols-outlined text-lg sm:text-3xl font-black">star_half</span>
+        <section class="py-5 sm:py-24 bg-surface border-b-4 border-on-background overflow-hidden">
+            <div class="max-w-[1500px] mx-auto px-3.5 sm:px-8 lg:px-12 mb-4 sm:mb-14">
+                <div class="text-center max-w-3xl mx-auto bg-white p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16]">
+                    <h2 class="text-base sm:text-4xl lg:text-5xl font-black text-on-background mb-0.5 sm:mb-3">Guest Reviews</h2>
+                    <div class="flex items-center justify-center gap-0.5 sm:gap-1 mb-0.5 text-primary">
+                        <span class="material-symbols-outlined text-base sm:text-3xl font-black">star</span>
+                        <span class="material-symbols-outlined text-base sm:text-3xl font-black">star</span>
+                        <span class="material-symbols-outlined text-base sm:text-3xl font-black">star</span>
+                        <span class="material-symbols-outlined text-base sm:text-3xl font-black">star</span>
+                        <span class="material-symbols-outlined text-base sm:text-3xl font-black">star_half</span>
                     </div>
-                    <p class="text-[10px] sm:text-base font-extrabold text-on-surface-variant bg-accent/20 inline-block px-2.5 py-0.5 rounded-full border border-on-background/20">4.9/5 based on 250+ Google Reviews</p>
+                    <p class="text-[9px] sm:text-base font-extrabold text-on-surface-variant bg-accent/20 inline-block px-2 py-0.5 rounded-full border border-on-background/20">4.9/5 based on 250+ Google Reviews</p>
                 </div>
             </div>
 
             <div class="overflow-hidden py-1 sm:py-4 w-full">
                 <div class="infinite-slider-track">
-                    <div class="w-[250px] min-[375px]:w-[280px] sm:w-[420px] px-2 sm:px-4 shrink-0">
-                        <div class="bg-white p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
-                            <div class="flex text-accent mb-2 sm:mb-4">
-                                <span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span>
+                    <div class="w-[230px] min-[375px]:w-[260px] sm:w-[420px] px-2 sm:px-4 shrink-0">
+                        <div class="bg-white p-3 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-1.5 sm:mb-4">
+                                <span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span>
                             </div>
-                            <p class="text-[11px] sm:text-lg font-bold text-on-background italic mb-2.5 sm:mb-6 leading-snug sm:leading-relaxed">"Best place in Pithora for family dinners. The Paneer Butter Masala and Cold Coffee are extraordinary!"</p>
+                            <p class="text-[10px] sm:text-lg font-bold text-on-background italic mb-2 sm:mb-6 leading-snug sm:leading-relaxed">"Best place in Pithora for family dinners. The Paneer Butter Masala and Cold Coffee are extraordinary!"</p>
                             <div class="flex items-center gap-2 sm:gap-4 bg-surface-container-high p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-on-background/20">
-                                <div class="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-accent flex items-center justify-center text-xs sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">PS</div>
+                                <div class="w-6 h-6 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-accent flex items-center justify-center text-[10px] sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">PS</div>
                                 <div>
-                                    <span class="font-black text-xs sm:text-base block">Priya Sharma</span>
-                                    <span class="text-[9px] sm:text-xs text-on-surface-variant font-bold">Pithora</span>
+                                    <span class="font-black text-[11px] sm:text-base block">Priya Sharma</span>
+                                    <span class="text-[8px] sm:text-xs text-on-surface-variant font-bold">Pithora</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="w-[250px] min-[375px]:w-[280px] sm:w-[420px] px-2 sm:px-4 shrink-0">
-                        <div class="bg-white p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
-                            <div class="flex text-accent mb-2 sm:mb-4">
-                                <span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span>
+                    <div class="w-[230px] min-[375px]:w-[260px] sm:w-[420px] px-2 sm:px-4 shrink-0">
+                        <div class="bg-white p-3 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-1.5 sm:mb-4">
+                                <span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span>
                             </div>
-                            <p class="text-[11px] sm:text-lg font-bold text-on-background italic mb-2.5 sm:mb-6 leading-snug sm:leading-relaxed">"Great ambiance and fast service. We celebrated my son's birthday here, perfect arrangement!"</p>
+                            <p class="text-[10px] sm:text-lg font-bold text-on-background italic mb-2 sm:mb-6 leading-snug sm:leading-relaxed">"Great ambiance and fast service. We celebrated my son's birthday here, perfect arrangement!"</p>
                             <div class="flex items-center gap-2 sm:gap-4 bg-surface-container-high p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-on-background/20">
-                                <div class="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-primary text-white flex items-center justify-center text-xs sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">RV</div>
+                                <div class="w-6 h-6 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-primary text-white flex items-center justify-center text-[10px] sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">RV</div>
                                 <div>
-                                    <span class="font-black text-xs sm:text-base block">Rahul Verma</span>
-                                    <span class="text-[9px] sm:text-xs text-on-surface-variant font-bold">Mahasamund</span>
+                                    <span class="font-black text-[11px] sm:text-base block">Rahul Verma</span>
+                                    <span class="text-[8px] sm:text-xs text-on-surface-variant font-bold">Mahasamund</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="w-[250px] min-[375px]:w-[280px] sm:w-[420px] px-2 sm:px-4 shrink-0">
-                        <div class="bg-white p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
-                            <div class="flex text-accent mb-2 sm:mb-4">
-                                <span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span>
+                    <div class="w-[230px] min-[375px]:w-[260px] sm:w-[420px] px-2 sm:px-4 shrink-0">
+                        <div class="bg-white p-3 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-1.5 sm:mb-4">
+                                <span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span>
                             </div>
-                            <p class="text-[11px] sm:text-lg font-bold text-on-background italic mb-2.5 sm:mb-6 leading-snug sm:leading-relaxed">"The Hyderabadi Chicken Biryani is a must-try! Authentic taste, rich aromas, and generous portion size."</p>
+                            <p class="text-[10px] sm:text-lg font-bold text-on-background italic mb-2 sm:mb-6 leading-snug sm:leading-relaxed">"The Hyderabadi Chicken Biryani is a must-try! Authentic taste, rich aromas, and generous portion size."</p>
                             <div class="flex items-center gap-2 sm:gap-4 bg-surface-container-high p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-on-background/20">
-                                <div class="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-secondary text-white flex items-center justify-center text-xs sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">AS</div>
+                                <div class="w-6 h-6 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-secondary text-white flex items-center justify-center text-[10px] sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">AS</div>
                                 <div>
-                                    <span class="font-black text-xs sm:text-base block">Anjali Singh</span>
-                                    <span class="text-[9px] sm:text-xs text-on-surface-variant font-bold">Basna</span>
+                                    <span class="font-black text-[11px] sm:text-base block">Anjali Singh</span>
+                                    <span class="text-[8px] sm:text-xs text-on-surface-variant font-bold">Basna</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="w-[250px] min-[375px]:w-[280px] sm:w-[420px] px-2 sm:px-4 shrink-0">
-                        <div class="bg-white p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
-                            <div class="flex text-accent mb-2 sm:mb-4">
-                                <span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span>
+                    <div class="w-[230px] min-[375px]:w-[260px] sm:w-[420px] px-2 sm:px-4 shrink-0">
+                        <div class="bg-white p-3 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-1.5 sm:mb-4">
+                                <span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span>
                             </div>
-                            <p class="text-[11px] sm:text-lg font-bold text-on-background italic mb-2.5 sm:mb-6 leading-snug sm:leading-relaxed">"Superb steamed chicken momos and spicy sauce. The staff treats everyone like family!"</p>
+                            <p class="text-[10px] sm:text-lg font-bold text-on-background italic mb-2 sm:mb-6 leading-snug sm:leading-relaxed">"Superb steamed chicken momos and spicy sauce. The staff treats everyone like family!"</p>
                             <div class="flex items-center gap-2 sm:gap-4 bg-surface-container-high p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-on-background/20">
-                                <div class="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-tertiary text-white flex items-center justify-center text-xs sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">MK</div>
+                                <div class="w-6 h-6 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-tertiary text-white flex items-center justify-center text-[10px] sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">MK</div>
                                 <div>
-                                    <span class="font-black text-xs sm:text-base block">Manish Kumar</span>
-                                    <span class="text-[9px] sm:text-xs text-on-surface-variant font-bold">Pithora</span>
+                                    <span class="font-black text-[11px] sm:text-base block">Manish Kumar</span>
+                                    <span class="text-[8px] sm:text-xs text-on-surface-variant font-bold">Pithora</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Duplicate for infinite seamless marquee -->
-                    <div class="w-[250px] min-[375px]:w-[280px] sm:w-[420px] px-2 sm:px-4 shrink-0">
-                        <div class="bg-white p-3.5 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
-                            <div class="flex text-accent mb-2 sm:mb-4">
-                                <span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-base sm:text-2xl font-black">star</span>
+                    <div class="w-[230px] min-[375px]:w-[260px] sm:w-[420px] px-2 sm:px-4 shrink-0">
+                        <div class="bg-white p-3 sm:p-8 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-full flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+                            <div class="flex text-accent mb-1.5 sm:mb-4">
+                                <span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span><span class="material-symbols-outlined text-sm sm:text-2xl font-black">star</span>
                             </div>
-                            <p class="text-[11px] sm:text-lg font-bold text-on-background italic mb-2.5 sm:mb-6 leading-snug sm:leading-relaxed">"Best place in Pithora for family dinners. The Paneer Butter Masala and Cold Coffee are extraordinary!"</p>
+                            <p class="text-[10px] sm:text-lg font-bold text-on-background italic mb-2 sm:mb-6 leading-snug sm:leading-relaxed">"Best place in Pithora for family dinners. The Paneer Butter Masala and Cold Coffee are extraordinary!"</p>
                             <div class="flex items-center gap-2 sm:gap-4 bg-surface-container-high p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-on-background/20">
-                                <div class="w-7 h-7 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-accent flex items-center justify-center text-xs sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">PS</div>
+                                <div class="w-6 h-6 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl border border-on-background bg-accent flex items-center justify-center text-[10px] sm:text-xl font-black shadow-[2px_2px_0px_#2c1e16] shrink-0">PS</div>
                                 <div>
-                                    <span class="font-black text-xs sm:text-base block">Priya Sharma</span>
-                                    <span class="text-[9px] sm:text-xs text-on-surface-variant font-bold">Pithora</span>
+                                    <span class="font-black text-[11px] sm:text-base block">Priya Sharma</span>
+                                    <span class="text-[8px] sm:text-xs text-on-surface-variant font-bold">Pithora</span>
                                 </div>
                             </div>
                         </div>
@@ -582,76 +581,76 @@
             </div>
         </section>
 
-        <!-- Event Booking CTA Section (Compact Mobile Height) -->
-        <section class="py-8 sm:py-24 relative overflow-hidden border-b-4 border-on-background bg-secondary" id="book">
+        <!-- Event Booking CTA Section -->
+        <section class="py-5 sm:py-24 relative overflow-hidden border-b-4 border-on-background bg-secondary" id="book">
             <div class="max-w-[1500px] mx-auto px-3.5 sm:px-8 lg:px-12 relative z-10">
-                <div class="max-w-4xl mx-auto text-center bg-white p-4.5 sm:p-14 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] sm:shadow-[14px_14px_0px_#2c1e16]">
-                    <div class="inline-block bg-accent text-on-background px-3 py-1 sm:px-5 sm:py-2 rounded-xl font-black text-xs sm:text-sm uppercase border-2 border-on-background mb-2.5 sm:mb-6 shadow-[2px_2px_0px_#2c1e16]">Party Time!</div>
-                    <h2 class="text-xl sm:text-5xl lg:text-6xl font-black mb-2.5 sm:mb-6 text-on-background">Celebrate With Us</h2>
-                    <p class="text-xs sm:text-xl text-on-surface-variant mb-5 sm:mb-10 font-bold leading-relaxed max-w-2xl mx-auto">Make your special occasions unforgettable. We host Birthdays, Anniversaries, Kitty Parties, and Family Gatherings with customized menus!</p>
-                    <button onclick="openBookingModal()" class="w-full sm:w-auto bg-primary text-white px-5 sm:px-10 py-3 sm:py-5 rounded-2xl text-xs sm:text-xl font-black border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] hover:bg-secondary transition-all uppercase tracking-wider block-border touch-target">
+                <div class="max-w-4xl mx-auto text-center bg-white p-3.5 sm:p-14 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[5px_5px_0px_#2c1e16] sm:shadow-[14px_14px_0px_#2c1e16]">
+                    <div class="inline-block bg-accent text-on-background px-2.5 py-0.5 sm:px-5 sm:py-2 rounded-xl font-black text-[10px] sm:text-sm uppercase border-2 border-on-background mb-2 sm:mb-6 shadow-[2px_2px_0px_#2c1e16]">Party Time!</div>
+                    <h2 class="text-lg sm:text-5xl lg:text-6xl font-black mb-2 sm:mb-6 text-on-background">Celebrate With Us</h2>
+                    <p class="text-[11px] sm:text-xl text-on-surface-variant mb-4 sm:mb-10 font-bold leading-relaxed max-w-2xl mx-auto">Make your special occasions unforgettable. We host Birthdays, Anniversaries, Kitty Parties, and Family Gatherings with customized menus!</p>
+                    <button onclick="openBookingModal()" class="w-full sm:w-auto bg-primary text-white px-4 sm:px-10 py-2.5 sm:py-5 rounded-2xl text-xs sm:text-xl font-black border-3 sm:border-4 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] hover:bg-secondary transition-all uppercase tracking-wider block-border touch-target">
                         Reserve Your Event Now
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section (Compact Height) -->
-        <section class="py-8 sm:py-24 bg-surface" id="contact">
+        <!-- Contact Section -->
+        <section class="py-5 sm:py-24 bg-surface" id="contact">
             <div class="max-w-[1500px] mx-auto px-3.5 sm:px-8 lg:px-12">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-10 bg-white p-4.5 sm:p-12 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] sm:shadow-[16px_16px_0px_#2c1e16]">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-10 bg-white p-3.5 sm:p-12 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background shadow-[5px_5px_0px_#2c1e16] sm:shadow-[16px_16px_0px_#2c1e16]">
                     
                     <div class="lg:col-span-6 flex flex-col justify-between">
                         <div>
-                            <h2 class="text-lg sm:text-5xl font-black text-on-background mb-1.5 sm:mb-4">Get in Touch</h2>
-                            <p class="text-[11px] sm:text-lg text-on-surface-variant mb-3 sm:mb-8 font-bold bg-accent/20 inline-block px-2.5 py-1 sm:px-4 sm:py-2 rounded-xl border border-on-background/20">We'd love to welcome you. Visit us or drop a message!</p>
+                            <h2 class="text-base sm:text-5xl font-black text-on-background mb-1 sm:mb-4">Get in Touch</h2>
+                            <p class="text-[10px] sm:text-lg text-on-surface-variant mb-2.5 sm:mb-8 font-bold bg-accent/20 inline-block px-2 py-0.5 sm:px-4 sm:py-2 rounded-xl border border-on-background/20">We'd love to welcome you. Visit us or drop a message!</p>
                             
-                            <div class="space-y-2.5 sm:space-y-5 mb-4 sm:mb-8">
-                                <div class="flex items-start gap-2.5 sm:gap-4 bg-surface-container-high p-2.5 sm:p-5 rounded-2xl border border-on-background/20 hover:border-on-background transition-colors">
-                                    <div class="w-9 h-9 sm:w-13 sm:h-13 rounded-xl sm:rounded-2xl border-2 border-on-background bg-accent flex items-center justify-center text-on-background shrink-0 shadow-[2px_2px_0px_#2c1e16]">
-                                        <span class="material-symbols-outlined text-base sm:text-2xl font-bold">location_on</span>
+                            <div class="space-y-2 sm:space-y-5 mb-3 sm:mb-8">
+                                <div class="flex items-start gap-2 sm:gap-4 bg-surface-container-high p-2 sm:p-5 rounded-2xl border border-on-background/20 hover:border-on-background transition-colors">
+                                    <div class="w-8 h-8 sm:w-13 sm:h-13 rounded-lg sm:rounded-2xl border-2 border-on-background bg-accent flex items-center justify-center text-on-background shrink-0 shadow-[2px_2px_0px_#2c1e16]">
+                                        <span class="material-symbols-outlined text-sm sm:text-2xl font-bold">location_on</span>
                                     </div>
                                     <div>
-                                        <h4 class="font-black text-[10px] sm:text-sm uppercase mb-0.5">Location</h4>
-                                        <p class="text-xs sm:text-base font-bold leading-snug">Lahrod Chowk, Near Hanuman Mandir, Pithora, Chhattisgarh</p>
+                                        <h4 class="font-black text-[9px] sm:text-sm uppercase mb-0.5">Location</h4>
+                                        <p class="text-[11px] sm:text-base font-bold leading-snug">Lahrod Chowk, Near Hanuman Mandir, Pithora, Chhattisgarh</p>
                                     </div>
                                 </div>
 
-                                <div class="flex items-start gap-2.5 sm:gap-4 bg-surface-container-high p-2.5 sm:p-5 rounded-2xl border border-on-background/20 hover:border-on-background transition-colors">
-                                    <div class="w-9 h-9 sm:w-13 sm:h-13 rounded-xl sm:rounded-2xl border-2 border-on-background bg-primary text-white flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#2c1e16]">
-                                        <span class="material-symbols-outlined text-base sm:text-2xl font-bold">call</span>
+                                <div class="flex items-start gap-2 sm:gap-4 bg-surface-container-high p-2 sm:p-5 rounded-2xl border border-on-background/20 hover:border-on-background transition-colors">
+                                    <div class="w-8 h-8 sm:w-13 sm:h-13 rounded-lg sm:rounded-2xl border-2 border-on-background bg-primary text-white flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#2c1e16]">
+                                        <span class="material-symbols-outlined text-sm sm:text-2xl font-bold">call</span>
                                     </div>
                                     <div>
-                                        <h4 class="font-black text-[10px] sm:text-sm uppercase mb-0.5">Phone</h4>
+                                        <h4 class="font-black text-[9px] sm:text-sm uppercase mb-0.5">Phone</h4>
                                         <p class="text-xs sm:text-lg font-black">+91 93010 59399</p>
                                     </div>
                                 </div>
 
-                                <div class="flex items-start gap-2.5 sm:gap-4 bg-surface-container-high p-2.5 sm:p-5 rounded-2xl border border-on-background/20 hover:border-on-background transition-colors">
-                                    <div class="w-9 h-9 sm:w-13 sm:h-13 rounded-xl sm:rounded-2xl border-2 border-on-background bg-secondary text-white flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#2c1e16]">
-                                        <span class="material-symbols-outlined text-base sm:text-2xl font-bold">schedule</span>
+                                <div class="flex items-start gap-2 sm:gap-4 bg-surface-container-high p-2 sm:p-5 rounded-2xl border border-on-background/20 hover:border-on-background transition-colors">
+                                    <div class="w-8 h-8 sm:w-13 sm:h-13 rounded-lg sm:rounded-2xl border-2 border-on-background bg-secondary text-white flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#2c1e16]">
+                                        <span class="material-symbols-outlined text-sm sm:text-2xl font-bold">schedule</span>
                                     </div>
                                     <div>
-                                        <h4 class="font-black text-[10px] sm:text-sm uppercase mb-0.5">Hours</h4>
-                                        <p class="text-xs sm:text-base font-bold">Everyday: 10:00 AM - 11:00 PM</p>
+                                        <h4 class="font-black text-[9px] sm:text-sm uppercase mb-0.5">Hours</h4>
+                                        <p class="text-[11px] sm:text-base font-bold">Everyday: 10:00 AM - 11:00 PM</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-1">
-                            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-2xl border-3 sm:border-4 border-on-background font-black text-xs sm:text-lg hover:bg-[#20b858] transition-all shadow-[3px_3px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] uppercase block-border touch-target" href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!" target="_blank">
+                        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 pt-0.5">
+                            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-[#25D366] text-white px-3.5 sm:px-8 py-2.5 sm:py-4 rounded-2xl border-3 sm:border-4 border-on-background font-black text-xs sm:text-lg hover:bg-[#20b858] transition-all shadow-[2.5px_2.5px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] uppercase block-border touch-target" href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!" target="_blank">
                                 <span class="material-symbols-outlined text-base sm:text-2xl">chat</span> WhatsApp Message
                             </a>
                             
-                            <a href="https://maps.app.goo.gl/RgbfqhCae4hwo4SE7" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white px-4 sm:px-8 py-2.5 sm:py-4 rounded-2xl border-3 sm:border-4 border-on-background font-black text-xs sm:text-lg hover:bg-secondary transition-all shadow-[3px_3px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] uppercase block-border touch-target">
+                            <a href="https://maps.app.goo.gl/RgbfqhCae4hwo4SE7" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-primary text-white px-3.5 sm:px-8 py-2.5 sm:py-4 rounded-2xl border-3 sm:border-4 border-on-background font-black text-xs sm:text-lg hover:bg-secondary transition-all shadow-[2.5px_2.5px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16] uppercase block-border touch-target">
                                 <span class="material-symbols-outlined text-base sm:text-2xl">directions</span> Get Directions
                             </a>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-6 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background overflow-hidden shadow-[5px_5px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16] h-[200px] sm:h-[400px] lg:h-auto bg-surface-container-high relative group">
-                        <a href="https://maps.app.goo.gl/RgbfqhCae4hwo4SE7" target="_blank" rel="noopener noreferrer" class="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-10 bg-white/95 dark:bg-[#1a100a] text-on-background dark:text-white px-2.5 py-1 sm:px-4 sm:py-2 rounded-xl border-2 border-on-background font-black text-[9px] sm:text-xs shadow-[2px_2px_0px_#2c1e16] hover:bg-accent hover:text-on-background transition-colors flex items-center gap-1 touch-target">
+                    <div class="lg:col-span-6 rounded-2xl sm:rounded-3xl border-3 sm:border-4 border-on-background overflow-hidden shadow-[4px_4px_0px_#2c1e16] sm:shadow-[10px_10px_0px_#2c1e16] h-[170px] min-[375px]:h-[200px] sm:h-[400px] lg:h-auto bg-surface-container-high relative group">
+                        <a href="https://maps.app.goo.gl/RgbfqhCae4hwo4SE7" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white/95 dark:bg-[#1a100a] text-on-background dark:text-white px-2 py-1 sm:px-4 sm:py-2 rounded-xl border-2 border-on-background font-black text-[8px] sm:text-xs shadow-[2px_2px_0px_#2c1e16] hover:bg-accent hover:text-on-background transition-colors flex items-center gap-1 touch-target">
                             <span class="material-symbols-outlined text-xs sm:text-base">open_in_new</span> Open in Maps
                         </a>
                         <iframe title="Sunshine Cafe & Restaurant Exact Location Map" class="w-full h-full border-0" src="https://maps.google.com/maps?q=Sunshine+Cafe+%26+Restaurant,+Lahrod+Chowk,+Near+Hanuman+Mandir,+Pithora,+Chhattisgarh+493551&t=&z=18&ie=UTF8&iwloc=B&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -661,19 +660,19 @@
         </section>
     </main>
 
-    <!-- Compact Mobile Footer -->
+    <!-- Compact Footer -->
     <footer class="bg-on-background w-full border-t-8 border-accent text-white">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10 px-4 sm:px-8 lg:px-12 py-6 sm:py-16 max-w-[1500px] mx-auto text-center sm:text-left">
-            <div class="flex flex-col items-center sm:items-start gap-2.5">
-                <a class="text-lg sm:text-2xl font-black text-accent flex items-center gap-2 bg-white/10 p-2 sm:p-3 rounded-2xl border-2 border-white/20 w-fit hover:scale-105 transition-transform" href="#home">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-10 px-4 sm:px-8 lg:px-12 py-5 sm:py-16 max-w-[1500px] mx-auto text-center sm:text-left">
+            <div class="flex flex-col items-center sm:items-start gap-2">
+                <a class="text-base sm:text-2xl font-black text-accent flex items-center gap-2 bg-white/10 p-2 sm:p-3 rounded-2xl border-2 border-white/20 w-fit hover:scale-105 transition-transform" href="#home">
                     <img alt="Sunshine Cafe Logo" loading="lazy" class="w-7 h-7 sm:w-9 sm:h-9 rounded-lg border-2 border-accent object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf6MhLpe1bP7RzYuRMqU7gGKw8UNg4CUXj4y9r2PSC2Yyr3lU61swRTi9CFfyc8k1mF5Uu7VYUyxnHqRd6A9NfPv8WqxibjgWyYAxzIJ8J2OwXkN0UXohZVQb6k20qGIGPrMr0r2eXybdr5X-hveLCy57kAVr0DBvT8PwkEd5_XPvwOmWsMR4zmK09wAPd_dFbvaN_lmbrt4mDyj6rr0lKE6aS4JdH1FtpTw0gNgxCJu7wSrCbic1WpkwZfAtycyAgb5uJyFfI6mt5"/>
                     Sunshine Cafe
                 </a>
-                <p class="text-[11px] sm:text-sm font-semibold text-surface-container-high leading-snug sm:leading-relaxed">
+                <p class="text-[10px] sm:text-sm font-semibold text-surface-container-high leading-snug sm:leading-relaxed">
                     Good Food. Great Vibes.<br/>Experience the best dine-in culinary journey in Pithora.
                 </p>
                 
-                <div class="flex items-center gap-2 pt-1">
+                <div class="flex items-center gap-2 pt-0.5">
                     <a href="https://wa.me/919301059399" target="_blank" aria-label="WhatsApp" class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#25D366] text-white flex items-center justify-center font-bold border-2 border-white/20 hover:scale-110 transition-transform touch-target">
                         <span class="material-symbols-outlined text-base sm:text-xl">chat</span>
                     </a>
@@ -686,36 +685,36 @@
                 </div>
             </div>
 
-            <div class="flex flex-col items-center sm:items-start gap-1.5 sm:gap-2.5">
-                <h4 class="text-xs sm:text-base font-black uppercase border-b-2 border-primary pb-0.5 w-fit">Quick Links</h4>
-                <a class="text-[11px] sm:text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#home">Home</a>
-                <a class="text-[11px] sm:text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#menu">Popular Dishes</a>
-                <a class="text-[11px] sm:text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#gallery">Gallery</a>
-                <a class="text-[11px] sm:text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#book">Book Table</a>
+            <div class="flex flex-col items-center sm:items-start gap-1 sm:gap-2.5">
+                <h4 class="text-[11px] sm:text-base font-black uppercase border-b-2 border-primary pb-0.5 w-fit">Quick Links</h4>
+                <a class="text-[10px] sm:text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#home">Home</a>
+                <a class="text-[10px] sm:text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#menu">Popular Dishes</a>
+                <a class="text-[10px] sm:text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#gallery">Gallery</a>
+                <a class="text-[10px] sm:text-sm font-bold hover:text-accent hover:translate-x-1 transition-all" href="#book">Book Table</a>
             </div>
 
-            <div class="flex flex-col items-center sm:items-start gap-1.5 sm:gap-2.5">
-                <h4 class="text-xs sm:text-base font-black uppercase border-b-2 border-secondary pb-0.5 w-fit">Dine-in Experience</h4>
-                <span class="text-[11px] sm:text-sm font-bold">Family Dining Experience</span>
-                <span class="text-[11px] sm:text-sm font-bold">Handcrafted Menu Specialties</span>
-                <span class="text-[11px] sm:text-sm font-bold">Birthday & Event Party Hosting</span>
+            <div class="flex flex-col items-center sm:items-start gap-1 sm:gap-2.5">
+                <h4 class="text-[11px] sm:text-base font-black uppercase border-b-2 border-secondary pb-0.5 w-fit">Dine-in Experience</h4>
+                <span class="text-[10px] sm:text-sm font-bold">Family Dining Experience</span>
+                <span class="text-[10px] sm:text-sm font-bold">Handcrafted Menu Specialties</span>
+                <span class="text-[10px] sm:text-sm font-bold">Birthday & Event Party Hosting</span>
             </div>
 
-            <div class="flex flex-col items-center sm:items-start gap-1.5 sm:gap-2.5">
-                <h4 class="text-xs sm:text-base font-black uppercase border-b-2 border-accent pb-0.5 w-fit">Contact Us</h4>
-                <p class="text-[11px] sm:text-sm font-bold">Lahrod Chowk, Near Hanuman Mandir, Pithora</p>
-                <p class="text-[11px] sm:text-sm font-black text-accent">📞 +91 93010 59399</p>
-                <p class="text-[11px] sm:text-sm font-semibold text-gray-300">✉️ sunshinecafe.pithora@gmail.com</p>
+            <div class="flex flex-col items-center sm:items-start gap-1 sm:gap-2.5">
+                <h4 class="text-[11px] sm:text-base font-black uppercase border-b-2 border-accent pb-0.5 w-fit">Contact Us</h4>
+                <p class="text-[10px] sm:text-sm font-bold">Lahrod Chowk, Near Hanuman Mandir, Pithora</p>
+                <p class="text-[10px] sm:text-sm font-black text-accent">📞 +91 93010 59399</p>
+                <p class="text-[10px] sm:text-sm font-semibold text-gray-300">✉️ sunshinecafe.pithora@gmail.com</p>
             </div>
         </div>
 
-        <div class="border-t-2 border-white/10 py-3.5 sm:py-6 text-center text-[10px] sm:text-xs font-extrabold bg-black/20 px-4">
+        <div class="border-t-2 border-white/10 py-3 sm:py-6 text-center text-[9px] sm:text-xs font-extrabold bg-black/20 px-4">
             © 2026 Sunshine Cafe & Restaurant. All Rights Reserved.
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Action Button (Positioned cleanly at bottom right corner) -->
-    <div class="fixed bottom-5 right-4 sm:right-6 z-40 flex items-center gap-3">
+    <!-- Floating WhatsApp Action Button -->
+    <div class="fixed bottom-4 right-4 sm:right-6 z-40 flex items-center gap-3">
         <div class="hidden sm:flex bg-on-background text-white text-xs font-black px-3 py-1.5 rounded-xl border-2 border-accent shadow-lg animate-pulse">
             Need info? Chat with us!
         </div>

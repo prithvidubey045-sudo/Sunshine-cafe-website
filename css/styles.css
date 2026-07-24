@@ -74,27 +74,27 @@ body {
 }
 
 .glass-nav-scrolled {
-    top: 12px !important;
-    left: 12px !important;
-    right: 12px !important;
-    width: calc(100% - 24px) !important;
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    width: calc(100% - 20px) !important;
     max-width: 1440px !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    border-radius: 22px !important;
-    padding-top: 0.6rem !important;
-    padding-bottom: 0.6rem !important;
-    background-color: rgba(255, 241, 224, 0.85) !important;
+    border-radius: 20px !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    background-color: rgba(255, 241, 224, 0.88) !important;
     backdrop-filter: blur(18px) !important;
     -webkit-backdrop-filter: blur(18px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(44, 30, 22, 0.08) !important;
+    border: 2px solid #2c1e16 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 4px 4px 0px #2c1e16 !important;
 }
 
 .dark .glass-nav-scrolled {
-    background-color: rgba(26, 16, 10, 0.88) !important;
-    border: 1px solid rgba(245, 224, 198, 0.22) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+    background-color: rgba(26, 16, 10, 0.92) !important;
+    border-color: #f5e0c6 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 4px 4px 0px #f5e0c6 !important;
 }
 
 /* Mobile Slide-in Drawer Animations */
@@ -163,15 +163,7 @@ body {
 .dark ::-webkit-scrollbar-track { background: #1a100a; }
 .dark ::-webkit-scrollbar-thumb { background: #E67E22; }
 
-/* Safe Area Inset Support for Modern Mobile Browsers */
-.safe-pb {
-    padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
-}
-
 /* Touch Target Minimum Dimensions (44px) */
-button, a, input, select, textarea {
-    min-height: 44px;
-}
 .touch-target {
     min-width: 44px;
     min-height: 44px;
