@@ -46,11 +46,11 @@ function renderCategories() {
     homepageCategories.forEach(cat => {
         const isActive = cat.id === activeCategory;
         const activeClasses = isActive 
-            ? "bg-primary text-white shadow-[4px_4px_0px_#2c1e16] dark:shadow-[4px_4px_0px_#f5e0c6]" 
+            ? "bg-primary text-white shadow-[3px_3px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16] dark:shadow-[3px_3px_0px_#f5e0c6]" 
             : "bg-surface hover:bg-accent text-on-background";
         
         html += `
-            <button onclick="selectCategory('${cat.id}')" class="px-5 py-3 rounded-xl border-2 border-on-background font-black text-sm whitespace-nowrap transition-all flex-shrink-0 touch-target ${activeClasses}">
+            <button onclick="selectCategory('${cat.id}')" class="px-4 py-2 sm:px-5 sm:py-3 rounded-xl border-2 border-on-background font-black text-xs sm:text-sm whitespace-nowrap transition-all flex-shrink-0 touch-target ${activeClasses}">
                 ${cat.label}
             </button>
         `;
@@ -80,26 +80,26 @@ function renderMenuDishes() {
     let html = '';
     featuredList.forEach(dish => {
         const vegBadge = dish.isVeg 
-            ? `<div class="w-4 h-4 border-2 border-green-600 flex items-center justify-center rounded bg-white"><div class="w-2.5 h-2.5 bg-green-600 rounded-full"></div></div>`
-            : `<div class="w-4 h-4 border-2 border-red-600 flex items-center justify-center rounded bg-white"><div class="w-2.5 h-2.5 bg-red-600 rounded-full"></div></div>`;
+            ? `<div class="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-green-600 flex items-center justify-center rounded bg-white"><div class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-600 rounded-full"></div></div>`
+            : `<div class="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-red-600 flex items-center justify-center rounded bg-white"><div class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-600 rounded-full"></div></div>`;
 
         html += `
-            <div onclick="openDishDetailModal(${dish.id})" class="dish-card cursor-pointer bg-white rounded-3xl overflow-hidden block-border group hover:-translate-y-2.5 hover:shadow-[12px_12px_0px_#2c1e16] transition-all duration-300 flex flex-col h-full">
-                <div class="h-52 sm:h-64 overflow-hidden relative border-b-4 border-on-background shrink-0">
+            <div onclick="openDishDetailModal(${dish.id})" class="dish-card cursor-pointer bg-white rounded-2xl sm:rounded-3xl overflow-hidden block-border group hover:-translate-y-2.5 hover:shadow-[12px_12px_0px_#2c1e16] transition-all duration-300 flex flex-col h-full">
+                <div class="h-40 sm:h-64 overflow-hidden relative border-b-3 sm:border-b-4 border-on-background shrink-0">
                     <img alt="${dish.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="${dish.image}"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-50 transition-opacity"></div>
-                    <div class="absolute top-4 left-4 bg-white/95 p-2 rounded-xl border-2 border-on-background shadow-md">
+                    <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 p-1.5 sm:p-2 rounded-xl border-2 border-on-background shadow-md">
                         ${vegBadge}
                     </div>
-                    <div class="absolute top-4 right-4 bg-accent px-4 py-1.5 rounded-xl font-black text-on-background border-2 border-on-background text-lg sm:text-xl shadow-[4px_4px_0px_#2c1e16] group-hover:rotate-6 transition-transform">₹${dish.price}</div>
+                    <div class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-accent px-3 py-1 sm:px-4 sm:py-1.5 rounded-xl font-black text-on-background border-2 border-on-background text-sm sm:text-xl shadow-[3px_3px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16] group-hover:rotate-6 transition-transform">₹${dish.price}</div>
                 </div>
-                <div class="p-5 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="p-4 sm:p-6 flex flex-col justify-between flex-1">
                     <div>
-                        <h3 class="text-xl sm:text-2xl font-black text-on-background mb-2 group-hover:text-primary transition-colors">${dish.name}</h3>
-                        <p class="text-sm text-on-surface-variant font-semibold line-clamp-2 leading-relaxed">${dish.desc}</p>
+                        <h3 class="text-lg sm:text-2xl font-black text-on-background mb-1 sm:mb-2 group-hover:text-primary transition-colors">${dish.name}</h3>
+                        <p class="text-xs sm:text-sm text-on-surface-variant font-semibold line-clamp-2 leading-snug sm:leading-relaxed">${dish.desc}</p>
                     </div>
                     
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-black text-xs sm:text-sm w-fit mt-4">
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-black text-[11px] sm:text-sm w-fit mt-3 sm:mt-4">
                         ${dish.tag}
                     </div>
                 </div>
@@ -124,31 +124,31 @@ function openDishDetailModal(dishId) {
     const content = document.getElementById('dishDetailContent');
 
     const vegBadge = dish.isVeg 
-        ? `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-green-100 text-green-800 border-2 border-green-600 font-extrabold text-sm"><span class="w-2.5 h-2.5 bg-green-600 rounded-full"></span> Pure Veg</span>`
-        : `<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-red-100 text-red-800 border-2 border-red-600 font-extrabold text-sm"><span class="w-2.5 h-2.5 bg-red-600 rounded-full"></span> Non-Veg</span>`;
+        ? `<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-xl bg-green-100 text-green-800 border-2 border-green-600 font-extrabold text-xs sm:text-sm"><span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-600 rounded-full"></span> Pure Veg</span>`
+        : `<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-xl bg-red-100 text-red-800 border-2 border-red-600 font-extrabold text-xs sm:text-sm"><span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-600 rounded-full"></span> Non-Veg</span>`;
 
     content.innerHTML = `
-        <div class="relative rounded-2xl overflow-hidden border-4 border-on-background shadow-[8px_8px_0px_#2c1e16] h-52 sm:h-72">
+        <div class="relative rounded-2xl overflow-hidden border-3 sm:border-4 border-on-background shadow-[6px_6px_0px_#2c1e16] sm:shadow-[8px_8px_0px_#2c1e16] h-44 sm:h-72">
             <img src="${dish.image}" alt="${dish.name}" class="w-full h-full object-cover"/>
-            <div class="absolute top-4 right-4 bg-accent px-4 py-2 rounded-2xl font-black text-xl sm:text-2xl border-2 border-on-background shadow-[4px_4px_0px_#2c1e16]">₹${dish.price}</div>
+            <div class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-accent px-3 py-1 sm:px-4 sm:py-2 rounded-xl font-black text-lg sm:text-2xl border-2 border-on-background shadow-[3px_3px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16]">₹${dish.price}</div>
         </div>
 
-        <div class="space-y-3">
-            <div class="flex flex-wrap items-center gap-3">
+        <div class="space-y-2.5 sm:space-y-3">
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
                 ${vegBadge}
-                <span class="px-3 py-1 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-extrabold text-sm">${dish.tag}</span>
+                <span class="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-extrabold text-xs sm:text-sm">${dish.tag}</span>
             </div>
 
-            <h2 class="text-2xl sm:text-3xl font-black text-on-background">${dish.name}</h2>
-            <p class="text-sm sm:text-base text-on-surface-variant font-semibold leading-relaxed">${dish.desc}</p>
+            <h2 class="text-xl sm:text-3xl font-black text-on-background">${dish.name}</h2>
+            <p class="text-xs sm:text-base text-on-surface-variant font-semibold leading-relaxed">${dish.desc}</p>
         </div>
 
-        <div class="pt-4 border-t-4 border-on-background flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <button onclick="closeDishDetailModal(); openBookingModal();" class="w-full sm:flex-1 bg-primary text-white py-3.5 rounded-xl border-4 border-on-background font-black text-sm sm:text-base uppercase shadow-[4px_4px_0px_#2c1e16] hover:bg-secondary block-border flex items-center justify-center gap-2 touch-target">
-                <span class="material-symbols-outlined text-xl">table_restaurant</span> Reserve a Table
+        <div class="pt-3 sm:pt-4 border-t-3 sm:border-t-4 border-on-background flex flex-col sm:flex-row gap-2.5 sm:gap-4">
+            <button onclick="closeDishDetailModal(); openBookingModal();" class="w-full sm:flex-1 bg-primary text-white py-3 rounded-xl border-3 sm:border-4 border-on-background font-black text-xs sm:text-base uppercase shadow-[3px_3px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16] hover:bg-secondary block-border flex items-center justify-center gap-2 touch-target">
+                <span class="material-symbols-outlined text-lg sm:text-xl">table_restaurant</span> Reserve a Table
             </button>
-            <a href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!%20I%20am%20interested%20in%20trying%20${encodeURIComponent(dish.name)}" target="_blank" class="w-full sm:flex-1 bg-[#25D366] text-white py-3.5 rounded-xl border-4 border-on-background font-black text-sm sm:text-base uppercase shadow-[4px_4px_0px_#2c1e16] hover:bg-[#1eb052] block-border flex items-center justify-center gap-2 touch-target">
-                <span class="material-symbols-outlined text-xl">chat</span> Chat on WhatsApp
+            <a href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!%20I%20am%20interested%20in%20trying%20${encodeURIComponent(dish.name)}" target="_blank" class="w-full sm:flex-1 bg-[#25D366] text-white py-3 rounded-xl border-3 sm:border-4 border-on-background font-black text-xs sm:text-base uppercase shadow-[3px_3px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16] hover:bg-[#1eb052] block-border flex items-center justify-center gap-2 touch-target">
+                <span class="material-symbols-outlined text-lg sm:text-xl">chat</span> Chat on WhatsApp
             </a>
         </div>
     `;
@@ -173,21 +173,21 @@ function openFullMenuModal() {
         if (catDishes.length === 0) return;
 
         html += `
-            <div class="bg-surface-container-high p-4 sm:p-6 rounded-2xl border-4 border-on-background shadow-[6px_6px_0px_#2c1e16]">
-                <h4 class="text-xl sm:text-2xl font-black text-primary border-b-4 border-primary pb-2 mb-4 uppercase tracking-wider">${cat.label}</h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-surface-container-high p-3.5 sm:p-6 rounded-2xl border-3 sm:border-4 border-on-background shadow-[4px_4px_0px_#2c1e16] sm:shadow-[6px_6px_0px_#2c1e16]">
+                <h4 class="text-lg sm:text-2xl font-black text-primary border-b-3 sm:border-b-4 border-primary pb-1.5 mb-3 sm:mb-4 uppercase tracking-wider">${cat.label}</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         `;
 
         catDishes.forEach(dish => {
             html += `
-                <div class="flex justify-between items-start bg-white p-4 rounded-xl border-2 border-on-background/20 cursor-pointer hover:border-primary transition-colors" onclick="openDishDetailModal(${dish.id})">
+                <div class="flex justify-between items-start bg-white p-3 sm:p-4 rounded-xl border-2 border-on-background/20 cursor-pointer hover:border-primary transition-colors" onclick="openDishDetailModal(${dish.id})">
                     <div>
-                        <h5 class="text-base sm:text-lg font-black flex items-center gap-2">
-                            <span class="w-2.5 h-2.5 rounded-full shrink-0 ${dish.isVeg ? 'bg-green-600' : 'bg-red-600'}"></span> ${dish.name}
+                        <h5 class="text-sm sm:text-lg font-black flex items-center gap-1.5 sm:gap-2">
+                            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full shrink-0 ${dish.isVeg ? 'bg-green-600' : 'bg-red-600'}"></span> ${dish.name}
                         </h5>
-                        <p class="text-xs text-on-surface-variant font-semibold mt-1 leading-normal">${dish.desc}</p>
+                        <p class="text-[11px] sm:text-xs text-on-surface-variant font-semibold mt-0.5 sm:mt-1 leading-snug">${dish.desc}</p>
                     </div>
-                    <span class="text-base sm:text-lg font-black text-accent bg-accent/20 px-3 py-1 rounded-lg border border-on-background/20 shrink-0 ml-2">₹${dish.price}</span>
+                    <span class="text-sm sm:text-lg font-black text-accent bg-accent/20 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg border border-on-background/20 shrink-0 ml-2">₹${dish.price}</span>
                 </div>
             `;
         });
