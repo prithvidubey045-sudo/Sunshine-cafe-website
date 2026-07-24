@@ -180,60 +180,60 @@
                     </button>
                 </div>
             </div>
-
-            <!-- Mobile Slide-in Drawer Dark Overlay -->
-            <div id="mobileDrawerOverlay" onclick="closeMobileDrawer()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[55] opacity-0 transition-opacity"></div>
-
-            <!-- Full-Screen Mobile Slide-in Navigation Drawer (From Right) -->
-            <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-[80%] max-w-[280px] bg-surface border-l-4 border-on-background z-[60] p-5 flex flex-col justify-between shadow-2xl translate-x-full transition-transform duration-300 overflow-y-auto">
-                <div class="space-y-4">
-                    <!-- Drawer Header -->
-                    <div class="flex justify-between items-center border-b-4 border-on-background pb-3">
-                        <div class="flex items-center gap-2">
-                            <img alt="Sunshine Cafe Logo" class="w-8 h-8 rounded-lg border-2 border-on-background object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf6MhLpe1bP7RzYuRMqU7gGKw8UNg4CUXj4y9r2PSC2Yyr3lU61swRTi9CFfyc8k1mF5Uu7VYUyxnHqRd6A9NfPv8WqxibjgWyYAxzIJ8J2OwXkN0UXohZVQb6k20qGIGPrMr0r2eXybdr5X-hveLCy57kAVr0DBvT8PwkEd5_XPvwOmWsMR4zmK09wAPd_dFbvaN_lmbrt4mDyj6rr0lKE6aS4JdH1FtpTw0gNgxCJu7wSrCbic1WpkwZfAtycyAgb5uJyFfI6mt5"/>
-                            <span class="font-black text-base text-on-background">Sunshine Cafe</span>
-                        </div>
-                        <button onclick="closeMobileDrawer()" aria-label="Close Menu" class="p-1 border-2 border-on-background rounded-xl hover:bg-red-500 hover:text-white transition-colors touch-target">
-                            <span class="material-symbols-outlined block">close</span>
-                        </button>
-                    </div>
-
-                    <!-- Clean Vertical Navigation Links -->
-                    <nav class="flex flex-col space-y-1 font-black text-sm uppercase tracking-wider">
-                        <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#home">
-                            <span class="material-symbols-outlined text-primary text-xl">home</span> Home
-                        </a>
-                        <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#menu">
-                            <span class="material-symbols-outlined text-primary text-xl">restaurant_menu</span> Popular Dishes
-                        </a>
-                        <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#gallery">
-                            <span class="material-symbols-outlined text-primary text-xl">photo_library</span> Gallery
-                        </a>
-                        <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#book">
-                            <span class="material-symbols-outlined text-primary text-xl">event</span> Book Table
-                        </a>
-                        <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#about">
-                            <span class="material-symbols-outlined text-primary text-xl">info</span> About Us
-                        </a>
-                        <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#contact">
-                            <span class="material-symbols-outlined text-primary text-xl">location_on</span> Contact
-                        </a>
-                    </nav>
-                </div>
-
-                <!-- Drawer Actions: Theme Switcher & WhatsApp Button ONLY -->
-                <div class="space-y-2 pt-3 border-t-4 border-on-background">
-                    <button onclick="toggleTheme()" class="w-full flex items-center justify-center gap-2 bg-surface-container-high text-on-background py-2.5 rounded-xl border-2 border-on-background font-black text-xs uppercase touch-target">
-                        <span class="material-symbols-outlined themeIcon text-lg">dark_mode</span> Switch Theme
-                    </button>
-
-                    <a href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!" target="_blank" class="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white py-2.5 rounded-xl border-2 border-on-background text-xs block-border font-black uppercase shadow-[3px_3px_0px_#2c1e16] touch-target">
-                        <span class="material-symbols-outlined text-lg">chat</span> WhatsApp Chat
-                    </a>
-                </div>
-            </aside>
         </nav>
     </header>
+
+    <!-- Mobile Slide-in Drawer Dark Overlay (Direct Child of Body) -->
+    <div id="mobileDrawerOverlay" onclick="closeMobileDrawer()" class="hidden fixed inset-0 bg-black/75 backdrop-blur-sm z-[99990] opacity-0 transition-opacity"></div>
+
+    <!-- Full-Screen Mobile Slide-in Navigation Drawer (Direct Child of Body) -->
+    <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-[85%] max-w-[320px] bg-surface border-l-4 border-on-background z-[99999] p-5 flex flex-col justify-between shadow-2xl translate-x-full transition-transform duration-300 overflow-y-auto">
+        <div class="space-y-4">
+            <!-- Drawer Header -->
+            <div class="flex justify-between items-center border-b-4 border-on-background pb-3">
+                <div class="flex items-center gap-2">
+                    <img alt="Sunshine Cafe Logo" class="w-8 h-8 rounded-lg border-2 border-on-background object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf6MhLpe1bP7RzYuRMqU7gGKw8UNg4CUXj4y9r2PSC2Yyr3lU61swRTi9CFfyc8k1mF5Uu7VYUyxnHqRd6A9NfPv8WqxibjgWyYAxzIJ8J2OwXkN0UXohZVQb6k20qGIGPrMr0r2eXybdr5X-hveLCy57kAVr0DBvT8PwkEd5_XPvwOmWsMR4zmK09wAPd_dFbvaN_lmbrt4mDyj6rr0lKE6aS4JdH1FtpTw0gNgxCJu7wSrCbic1WpkwZfAtycyAgb5uJyFfI6mt5"/>
+                    <span class="font-black text-base text-on-background">Sunshine Cafe</span>
+                </div>
+                <button onclick="closeMobileDrawer()" aria-label="Close Menu" class="p-1 border-2 border-on-background rounded-xl hover:bg-red-500 hover:text-white transition-colors touch-target">
+                    <span class="material-symbols-outlined block">close</span>
+                </button>
+            </div>
+
+            <!-- Clean Vertical Navigation Links -->
+            <nav class="flex flex-col space-y-1 font-black text-sm uppercase tracking-wider">
+                <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#home">
+                    <span class="material-symbols-outlined text-primary text-xl">home</span> Home
+                </a>
+                <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#menu">
+                    <span class="material-symbols-outlined text-primary text-xl">restaurant_menu</span> Popular Dishes
+                </a>
+                <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#gallery">
+                    <span class="material-symbols-outlined text-primary text-xl">photo_library</span> Gallery
+                </a>
+                <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#book">
+                    <span class="material-symbols-outlined text-primary text-xl">event</span> Book Table
+                </a>
+                <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#about">
+                    <span class="material-symbols-outlined text-primary text-xl">info</span> About Us
+                </a>
+                <a onclick="closeMobileDrawer()" class="py-2.5 px-3 rounded-xl hover:bg-primary/20 text-on-background transition-colors flex items-center gap-2.5 touch-target" href="#contact">
+                    <span class="material-symbols-outlined text-primary text-xl">location_on</span> Contact
+                </a>
+            </nav>
+        </div>
+
+        <!-- Drawer Actions: Theme Switcher & WhatsApp Button ONLY -->
+        <div class="space-y-2 pt-3 border-t-4 border-on-background">
+            <button onclick="toggleTheme()" class="w-full flex items-center justify-center gap-2 bg-surface-container-high text-on-background py-2.5 rounded-xl border-2 border-on-background font-black text-xs uppercase touch-target">
+                <span class="material-symbols-outlined themeIcon text-lg">dark_mode</span> Switch Theme
+            </button>
+
+            <a href="https://wa.me/919301059399?text=Hello%20Sunshine%20Cafe!" target="_blank" class="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white py-2.5 rounded-xl border-2 border-on-background text-xs block-border font-black uppercase shadow-[3px_3px_0px_#2c1e16] touch-target">
+                <span class="material-symbols-outlined text-lg">chat</span> WhatsApp Chat
+            </a>
+        </div>
+    </aside>
 
     <main>
         <!-- Hero Section (Compact Mobile Height: 50-60% Shorter Mobile Page) -->
@@ -653,7 +653,7 @@
                         <a href="https://maps.app.goo.gl/RgbfqhCae4hwo4SE7" target="_blank" rel="noopener noreferrer" class="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white/95 dark:bg-[#1a100a] text-on-background dark:text-white px-2 py-1 sm:px-4 sm:py-2 rounded-xl border-2 border-on-background font-black text-[8px] sm:text-xs shadow-[2px_2px_0px_#2c1e16] hover:bg-accent hover:text-on-background transition-colors flex items-center gap-1 touch-target">
                             <span class="material-symbols-outlined text-xs sm:text-base">open_in_new</span> Open in Maps
                         </a>
-                        <iframe title="Sunshine Cafe & Restaurant Exact Location Map" class="w-full h-full border-0" src="https://maps.google.com/maps?q=Sunshine+Cafe+%26+Restaurant,+Lahrod+Chowk,+Near+Hanuman+Mandir,+Pithora,+Chhattisgarh+493551&t=&z=18&ie=UTF8&iwloc=B&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe title="Sunshine Cafe & Restaurant Exact Location Map" class="w-full h-full border-0" src="https://maps.google.com/maps?q=Sunshine+Cafe+%26+Restaurant,+Lahrod Chowk,+Near+Hanuman+Mandir,+Pithora,+Chhattisgarh+493551&t=&z=18&ie=UTF8&iwloc=B&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
