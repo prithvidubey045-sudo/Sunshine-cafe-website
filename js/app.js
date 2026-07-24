@@ -50,7 +50,7 @@ function renderCategories() {
             : "bg-surface hover:bg-accent text-on-background";
         
         html += `
-            <button onclick="selectCategory('${cat.id}')" class="px-4 py-2 sm:px-5 sm:py-3 rounded-xl border-2 border-on-background font-black text-xs sm:text-sm whitespace-nowrap transition-all flex-shrink-0 touch-target ${activeClasses}">
+            <button onclick="selectCategory('${cat.id}')" class="px-3.5 py-2 sm:px-5 sm:py-3 rounded-xl border-2 border-on-background font-black text-xs sm:text-sm whitespace-nowrap transition-all flex-shrink-0 touch-target ${activeClasses}">
                 ${cat.label}
             </button>
         `;
@@ -58,7 +58,7 @@ function renderCategories() {
     container.innerHTML = html;
 }
 
-// Render Featured 6 Dishes Cards Grid on Homepage
+// Render Featured Dishes Cards Grid on Homepage (First 4 items on mobile for compact layout)
 function renderMenuDishes() {
     const container = document.getElementById('menuContainer');
     if (!container) return;
@@ -77,29 +77,32 @@ function renderMenuDishes() {
         featuredList = featuredList.filter(d => d.category === "shakes");
     }
 
+    const isMobile = window.innerWidth < 640;
+    const displayList = isMobile ? featuredList.slice(0, 4) : featuredList.slice(0, 6);
+
     let html = '';
-    featuredList.forEach(dish => {
+    displayList.forEach(dish => {
         const vegBadge = dish.isVeg 
             ? `<div class="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-green-600 flex items-center justify-center rounded bg-white"><div class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-600 rounded-full"></div></div>`
             : `<div class="w-3.5 h-3.5 sm:w-4 sm:h-4 border-2 border-red-600 flex items-center justify-center rounded bg-white"><div class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-red-600 rounded-full"></div></div>`;
 
         html += `
             <div onclick="openDishDetailModal(${dish.id})" class="dish-card cursor-pointer bg-white rounded-2xl sm:rounded-3xl overflow-hidden block-border group hover:-translate-y-2.5 hover:shadow-[12px_12px_0px_#2c1e16] transition-all duration-300 flex flex-col h-full">
-                <div class="h-40 sm:h-64 overflow-hidden relative border-b-3 sm:border-b-4 border-on-background shrink-0">
+                <div class="h-36 sm:h-64 overflow-hidden relative border-b-3 sm:border-b-4 border-on-background shrink-0">
                     <img alt="${dish.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="${dish.image}"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-50 transition-opacity"></div>
-                    <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 p-1.5 sm:p-2 rounded-xl border-2 border-on-background shadow-md">
+                    <div class="absolute top-2.5 left-2.5 sm:top-4 sm:left-4 bg-white/95 p-1.5 sm:p-2 rounded-xl border-2 border-on-background shadow-md">
                         ${vegBadge}
                     </div>
-                    <div class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-accent px-3 py-1 sm:px-4 sm:py-1.5 rounded-xl font-black text-on-background border-2 border-on-background text-sm sm:text-xl shadow-[3px_3px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16] group-hover:rotate-6 transition-transform">₹${dish.price}</div>
+                    <div class="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 bg-accent px-2.5 py-1 sm:px-4 sm:py-1.5 rounded-xl font-black text-on-background border-2 border-on-background text-xs sm:text-xl shadow-[3px_3px_0px_#2c1e16] sm:shadow-[4px_4px_0px_#2c1e16] group-hover:rotate-6 transition-transform">₹${dish.price}</div>
                 </div>
-                <div class="p-4 sm:p-6 flex flex-col justify-between flex-1">
+                <div class="p-3.5 sm:p-6 flex flex-col justify-between flex-1">
                     <div>
-                        <h3 class="text-lg sm:text-2xl font-black text-on-background mb-1 sm:mb-2 group-hover:text-primary transition-colors">${dish.name}</h3>
+                        <h3 class="text-base sm:text-2xl font-black text-on-background mb-1 sm:mb-2 group-hover:text-primary transition-colors">${dish.name}</h3>
                         <p class="text-xs sm:text-sm text-on-surface-variant font-semibold line-clamp-2 leading-snug sm:leading-relaxed">${dish.desc}</p>
                     </div>
                     
-                    <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-black text-[11px] sm:text-sm w-fit mt-3 sm:mt-4">
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-accent/20 text-on-background border-2 border-on-background font-black text-[10px] sm:text-sm w-fit mt-2.5 sm:mt-4">
                         ${dish.tag}
                     </div>
                 </div>
@@ -369,11 +372,15 @@ if (sliderTrack) {
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
-    if (window.scrollY >= 70) {
+    if (window.scrollY >= 50) {
         navbar.classList.add('glass-nav-scrolled');
     } else {
         navbar.classList.remove('glass-nav-scrolled');
     }
+});
+
+window.addEventListener('resize', () => {
+    renderMenuDishes();
 });
 
 // PWA Service Worker Registration
