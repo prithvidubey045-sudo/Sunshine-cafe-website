@@ -70,52 +70,55 @@ body {
 
 /* Glassmorphism Navbar Scrolled State */
 #navbar {
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-nav-scrolled {
-    top: 10px !important;
-    left: 10px !important;
-    right: 10px !important;
-    width: calc(100% - 20px) !important;
-    max-width: 1440px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    border-radius: 20px !important;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-    background-color: rgba(255, 241, 224, 0.88) !important;
-    backdrop-filter: blur(18px) !important;
-    -webkit-backdrop-filter: blur(18px) !important;
-    border: 2px solid #2c1e16 !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 4px 4px 0px #2c1e16 !important;
+    background-color: rgba(255, 241, 224, 0.92) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    box-shadow: 0 4px 20px rgba(44, 30, 22, 0.1) !important;
 }
 
 .dark .glass-nav-scrolled {
-    background-color: rgba(26, 16, 10, 0.92) !important;
-    border-color: #f5e0c6 !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 4px 4px 0px #f5e0c6 !important;
+    background-color: rgba(26, 16, 10, 0.94) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Mobile Slide-in Drawer Styles & Highest Z-Index (Outside Navbar) */
-#mobileDrawerOverlay {
+@media (min-width: 768px) {
+    .glass-nav-scrolled {
+        top: 12px !important;
+        left: 12px !important;
+        right: 12px !important;
+        width: calc(100% - 24px) !important;
+        max-width: 1440px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border-radius: 20px !important;
+        border: 2px solid #2c1e16 !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 4px 4px 0px #2c1e16 !important;
+    }
+}
+
+/* Mobile Slide-in Drawer Component (Highest Z-Index, Direct Child of Body) */
+#mobileNavOverlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: 99990 !important;
     transition: opacity 0.3s ease;
 }
 
-#mobileDrawer {
+#mobileNavDrawer {
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     height: 100dvh;
-    width: 85%;
-    max-width: 320px;
+    width: 80%;
+    max-width: 300px;
     background-color: #FFF1E0;
     border-left: 4px solid #2c1e16;
     z-index: 99999 !important;
@@ -123,20 +126,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.4);
-    transform: translateX(100%);
+    box-shadow: -10px 0px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     overflow-y: auto;
 }
 
-.dark #mobileDrawer {
+.dark #mobileNavDrawer {
     background-color: #1a100a !important;
     border-color: #f5e0c6 !important;
     color: #f5e0c6 !important;
-}
-
-#mobileDrawer.drawer-open {
-    transform: translateX(0) !important;
 }
 
 /* Floating Particle Animations */

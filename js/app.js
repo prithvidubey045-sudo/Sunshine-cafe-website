@@ -211,25 +211,27 @@ function closeFullMenuModal() {
     document.body.classList.remove('overflow-hidden');
 }
 
-// Mobile Slide-in Navigation Drawer Handlers
+// Rebuilt Re-engineered Mobile Slide-in Navigation Drawer Handlers
 function openMobileDrawer() {
-    const drawer = document.getElementById('mobileDrawer');
-    const overlay = document.getElementById('mobileDrawerOverlay');
+    const drawer = document.getElementById('mobileNavDrawer');
+    const overlay = document.getElementById('mobileNavOverlay');
     if (drawer && overlay) {
         overlay.classList.remove('hidden');
-        setTimeout(() => {
+        requestAnimationFrame(() => {
             overlay.classList.remove('opacity-0');
-            drawer.classList.add('drawer-open');
-        }, 10);
+            drawer.classList.remove('translate-x-full');
+            drawer.classList.add('translate-x-0');
+        });
         document.body.classList.add('overflow-hidden');
     }
 }
 
 function closeMobileDrawer() {
-    const drawer = document.getElementById('mobileDrawer');
-    const overlay = document.getElementById('mobileDrawerOverlay');
+    const drawer = document.getElementById('mobileNavDrawer');
+    const overlay = document.getElementById('mobileNavOverlay');
     if (drawer && overlay) {
-        drawer.classList.remove('drawer-open');
+        drawer.classList.remove('translate-x-0');
+        drawer.classList.add('translate-x-full');
         overlay.classList.add('opacity-0');
         setTimeout(() => {
             overlay.classList.add('hidden');
